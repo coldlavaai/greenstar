@@ -1533,6 +1533,55 @@ button[class*="vapi-btn"] {
     font-family: Poppins, "Poppins Fallback", sans-serif;
 }
 
+#vapi-tooltip {
+    position: absolute;
+    bottom: 85px;
+    right: 0;
+    background: linear-gradient(135deg, 
+        rgba(104, 204, 209, 0.95), 
+        rgba(7, 133, 2, 0.9)) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    color: var(--vapi-accent-color) !important;
+    padding: 12px 16px !important;
+    border-radius: 15px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    opacity: 0 !important;
+    transform: translateY(10px) scale(0.8) !important;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    pointer-events: none !important;
+    box-shadow: 
+        0 8px 32px rgba(104, 204, 209, 0.3),
+        0 4px 16px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(104, 204, 209, 0.3) !important;
+}
+
+#vapi-tooltip::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -6px !important;
+    right: 20px !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 6px solid transparent !important;
+    border-right: 6px solid transparent !important;
+    border-top: 6px solid rgba(104, 204, 209, 0.95) !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1)) !important;
+}
+
+#vapi-hybrid-widget:hover #vapi-tooltip {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+}
+
+#vapi-hybrid-widget:hover #vapi-chat-panel.open ~ #vapi-tooltip,
+#vapi-chat-panel.open ~ #vapi-tooltip {
+    opacity: 0 !important;
+    transform: translateY(10px) scale(0.8) !important;
+}
+
 #vapi-hybrid-widget *,
 #vapi-hybrid-widget *::before,
 #vapi-hybrid-widget *::after {
@@ -2066,6 +2115,9 @@ button[class*="vapi-btn"] {
 
 <!-- VAPI Ultra-Luxury Sophie Assistant Widget -->
 <div id="vapi-hybrid-widget">
+  <!-- Premium Hover Tooltip -->
+  <div id="vapi-tooltip">Ask Sophie?</div>
+  
   <!-- Ultra-Premium Logo Button with Glow -->
   <button id="vapi-chat-button" aria-label="Talk to Sophie">
     <img 
