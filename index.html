@@ -2382,6 +2382,212 @@ button[class*="vapi-btn"] {
         padding: 15px 20px !important;
     }
 }
+
+/* DM PLATFORM MOBILE LAYOUT FIXES */
+/* Override platform desktop constraints for mobile optimization */
+@media (max-width: 767px) {
+    /* Critical mobile layout fixes - override DM platform constraints */
+    .dmInner {
+        min-width: 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .dmDesktopBody .dmInner {
+        min-width: 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    /* Fix responsive layout system */
+    .dmRespRow, .dmRespRowsWrapper {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .dmRespCol {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: none !important;
+        display: block !important;
+    }
+    
+    /* Override desktop-only constraints */
+    .dmDesktopBody .dmRespRow .large-2,
+    .dmDesktopBody .dmRespRow .large-4,
+    .dmDesktopBody .dmRespRow .large-5,
+    .dmDesktopBody .dmRespRow .large-6,
+    .dmDesktopBody .dmRespRow .large-7,
+    .dmDesktopBody .dmRespRow .large-12 {
+        width: 100% !important;
+        max-width: 100% !important;
+        float: none !important;
+        display: block !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Header mobile optimization */
+    .dmHeader {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 15px !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Body content mobile fixes */
+    .dmBody {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Widget mobile responsiveness */
+    #dm .dmInner .dmWidget {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 10px 0 !important;
+        padding: 10px 15px !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Navigation mobile fixes */
+    .main-navigation.unifiednav {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    .main-navigation.unifiednav .unifiednav__container {
+        flex-wrap: wrap !important;
+        width: 100% !important;
+    }
+    
+    /* Content containers mobile optimization */
+    #dmFirstContainer {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Large body mobile fixes */
+    .dmLargeBody .dmRespRow {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol,
+    .dmLargeBody .fHeader .dmRespRow .dmRespCol {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+    }
+    
+    /* Form mobile optimization */
+    .dmform {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 10px 15px !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Image widget mobile fixes */
+    .imageWidget {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .imageWidget img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+    }
+    
+    /* Typography mobile optimization */
+    .dmNewParagraph {
+        padding: 5px 15px !important;
+        margin: 10px 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Title and header mobile fixes */
+    .dmwidget-title,
+    #innerBar {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 15px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        font-size: 18px !important;
+    }
+    
+    /* Standard desktop override for mobile */
+    .dmStandardDesktop {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Viewport and layout fundamentals */
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+    
+    html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+    
+    /* Fix any remaining overflow issues */
+    * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    *:not(#vapi-hybrid-widget):not(#vapi-chat-panel):not(.vapi-message):not(.vapi-voice-message) {
+        overflow-x: hidden !important;
+    }
+}
+
+/* Additional mobile fixes for very small screens */
+@media (max-width: 480px) {
+    .dmInner {
+        font-size: 14px !important;
+    }
+    
+    .dmRespRow, .dmRespRowsWrapper {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    .dmLargeBody .dmRespRow {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    .dmwidget-title,
+    #innerBar {
+        font-size: 16px !important;
+        padding: 0 10px !important;
+    }
+}
 </style>
 
 <!-- VAPI Ultra-Luxury Sophie Assistant Widget -->
