@@ -2158,13 +2158,13 @@ button[class*="vapi-btn"] {
       try {
         if (window.vapiSDK) {
           console.log('Initializing VAPI voice...');
-          console.log('Public key:', '9bf2cd14-2fd3-4f5c-9fd8-34a8ad7437a9');
-          console.log('Assistant ID:', 'eeb05e21-693b-46ca-ab85-478b402c43ba');
+          console.log('Public key:', 'b3f38fb7-8541-4e3e-8708-5d49c3f54f00');
+          console.log('Assistant ID:', 'a555d10b-c769-4959-8595-24673d6fbf37');
           
-          // Cold Lava AI Configuration
+          // Green Star Solar Configuration
           vapiInstance = window.vapiSDK.run({
-            apiKey: '9bf2cd14-2fd3-4f5c-9fd8-34a8ad7437a9',
-            assistant: 'eeb05e21-693b-46ca-ab85-478b402c43ba'
+            apiKey: 'b3f38fb7-8541-4e3e-8708-5d49c3f54f00',
+            assistant: 'a555d10b-c769-4959-8595-24673d6fbf37'
           });
 
           // Set up voice event listeners
@@ -2287,7 +2287,7 @@ button[class*="vapi-btn"] {
       try {
         elements.voiceButton.className = 'connecting';
         elements.voiceButton.textContent = 'Connecting';
-        vapiInstance.start('eeb05e21-693b-46ca-ab85-478b402c43ba');
+        vapiInstance.start('a555d10b-c769-4959-8595-24673d6fbf37');
       } catch (error) {
         console.error('Failed to start voice call:', error);
         elements.voiceButton.className = '';
@@ -2329,10 +2329,10 @@ button[class*="vapi-btn"] {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer c624aff0-d3ee-479c-9fb0-90587455964f'
+            'Authorization': 'Bearer bb0b198b-1a8f-4675-bdf8-8a865fc5d68a'
           },
           body: JSON.stringify({
-            assistantId: 'eeb05e21-693b-46ca-ab85-478b402c43ba',
+            assistantId: 'a555d10b-c769-4959-8595-24673d6fbf37',
             input: message,
             previousChatId: previousChatId
           })
