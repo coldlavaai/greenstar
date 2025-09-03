@@ -1,0 +1,1509 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.greenstarsolar.co.uk/',
+        AccountUUID: '6266ca0b90ca44ccb5dac0f72b36f569',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: '8f142869',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Fri Jan 17 12:30:36 UTC 2025',
+        ExternalUid: 'looka',
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'home',
+        InitialPageUuid: '6636e19258134b4fb733394284f71306',
+        InitialPageId: '1169239106',
+        InitialEncodedPageAlias: 'aG9tZQ==',
+        InitialHeaderUuid: 'c00e9ca7d7844a669c2b50edfe2c4b6a',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: true,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '51130',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'LEFT',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: -1,
+            NavbarLiveHomePage: 'https://www.greenstarsolar.co.uk/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: false,
+        planID: '7',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'en',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="https://www.greenstarsolar.co.uk/">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>HOME
+</title>
+
+<!--Add favorites icons-->
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/8f142869/site_favicon_16_1732383345220.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    
+</style>
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+  
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  
+</style>
+
+
+
+<style id="criticalCss">
+    @charset "UTF-8";.display_None,.dmPopupMask{display:none}*,.dmPopup,:after,:before{box-sizing:border-box}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/dmsans/v15/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Roboto Slab';font-style:normal;font-weight:100 900;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/robotoslab/v34/BngMUXZYTXPIvIBgJJSb6ufN5qU.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Poppins;font-style:normal;font-weight:300;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/poppins/v22/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Poppins;font-style:italic;font-weight:300;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/poppins/v22/pxiDyp8kv8JHgFVrJJLm21lVF9eO.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Poppins;font-style:normal;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/poppins/v22/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Poppins;font-style:italic;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/poppins/v22/pxiGyp8kv8JHgFVrJJLucHtA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Alata;font-style:normal;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/alata/v11/PbytFmztEwbIoce9zqY.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Poppins;font-style:normal;font-weight:700;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/poppins/v22/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}.dmInner{min-height:100vh!important;position:relative}.dmDisplay_None{display:none!important}#dm .dmWidget .icon{font-size:26px}body.dmRoot #dm .dmOuter .dmInner .dmWidget .icon.hasFontIcon{height:26px;margin-top:-13px;line-height:normal;text-align:center;background-image:none}.dmRoot .hasFontIcon{background-image:none!important}.dmPopupMask{position:fixed;margin:0;width:10px;z-index:1000000999;top:0;left:0}#dmRoot .dmPopup,.dmPopup,.dmPopupClose:before,[data-display-type=block]{display:block}.dmPopup{text-align:left;position:fixed;top:10px;left:0;width:93%;z-index:1000009999!important;background:#f5f5f5;overflow-y:auto;height:100%}.dmPopup .dmPopupTitle{text-align:left;font:700 19px Helvetica,Arial;margin:20px 20px 35px;color:#999}#dm .dmInner .dmWidget,.dmHeader,.text-align-center{text-align:center}#dmPopup{opacity:0}.dmPopupClose,.dmPopupClose:before{position:absolute;visibility:visible}.dmPopupClose{border-radius:25px;width:27px;height:27px;z-index:1;background-color:rgba(255,255,255,.4);top:12px;right:12px}.dmPopupClose:before{font-size:20px;color:#000;top:3px;right:3px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar{width:5px;height:5px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-track{background:rgba(0,0,0,.1)}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-thumb{background:#c8c8c8;box-shadow:inset 0 1px 2px #454545;border-radius:45px}.dmRespRow.fullBleedMode>.dmRespColsWrapper{width:100%!important;max-width:100%!important}.dmRespRow.fullBleedMode{padding-left:0!important;padding-right:0!important}#dm .dmRespRow .dmRespColsWrapper{display:flex}#dm .hasBackgroundOverlay:not(.dmPopupPage):not(.layout-drawer){position:relative!important}#dm .hasBackgroundOverlay:not(.hasExtraLayerOverlay):before{display:block!important;position:absolute!important;top:0!important;left:0!important;width:100%!important;height:100%!important;content:' '!important;border-radius:inherit}#dm .hasBackgroundOverlay:not(.dmRespRow):not(.dmRespCol):not(.dmFooter)>:not([class^=ui-]){position:relative}#dm .dmInner .dmWidget.align-center,.align-center{margin-left:auto;margin-right:auto}body.fix-mobile-scrolling{overflow:initial}#dmRoot{text-decoration-skip-ink:none}.dmform-title{padding-right:15px;padding-left:15px}@media (max-width:767px){#dmRoot.responsiveTablet #dm .dmInner .hide-for-small{display:none!important}}@media (min-width:1025px) and (max-width:1399px){[data-hidden-on-desktop]{display:none!important}}body{-webkit-overflow-scrolling:touch}@media (min-width:1025px){#dmRoot.responsiveTablet #dm .dmInner .hide-for-large{display:none!important}:root{--btn-text-font-size:16px}}@media (min-width:768px) and (max-width:1024px){#dmRoot.responsiveTablet #dm .dmInner .hide-for-medium,[data-hidden-on-tablet]{display:none!important}:root{--btn-text-font-size:16px}}nav{display:block}html{font-family:Source Sans Pro;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0}img{border:0;max-width:100%;-ms-interpolation-mode:bicubic;display:inline-block}button,input{font-family:inherit;font-size:100%;margin:0;line-height:normal}button{text-transform:none;-webkit-appearance:button}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}.dmRespRow.dmRespRowNoPadding{padding:0}.dmRespRow{padding-top:15px;padding-bottom:15px}.dmRespRow .dmRespRow:after,.dmRespRow .dmRespRow:before,.dmRespRow:after,.dmRespRow:before{content:' ';display:table}.dmRespRow .dmRespRow:after,.dmRespRow:after{clear:both}.dmRespRow,.dmRespRow .dmRespColsWrapper{max-width:960px;position:relative;margin:0 auto;width:100%}@media screen and (min-width:1200px){.rows-1200 .dmRespRow:not(.fullBleedMode) .dmRespColsWrapper{max-width:1200px}}.dmHeader,.dmRespRow .dmRespCol>*{max-width:100%}.dmRespRow .dmRespCol{position:relative;width:100%;display:inline-block;vertical-align:top;float:left}.dmRespRow .dmRespRow{width:auto;margin-top:0;margin-bottom:0;max-width:none}.dmDesktopBody .dmRespRow .large-2{position:relative;width:16.66667%}.dmDesktopBody .dmRespRow .large-4{position:relative;width:33.33333%}.dmDesktopBody .dmRespRow .large-5{position:relative;width:41.66667%}.dmDesktopBody .dmRespRow .large-6{position:relative;width:50%}.dmDesktopBody .dmRespRow .large-7{position:relative;width:58.33333%}.dmDesktopBody .dmRespRow .large-12{position:relative;width:100%}[class*=' dm-common-icons-']{speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:dm-common-icons!important}.dm-common-icons-close:before{content:'\e901'}#dm div.dmContent [class*=' icon-'],[class*=' icon-']{font-family:FontAwesome!important;font-weight:400;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased}[class*=' icon-']:before{text-decoration:none;display:inline-block;speak:none}a [class*=' icon-']{display:inline}[class*=' icon-']{display:inline;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0 0;background-repeat:repeat;margin-top:0}.icon-star:before{content:'\f005'}.icon-angle-down:before{content:'\f107'}#dm .dmRespRow .dmRespCol>.dmWidget{overflow:initial}@media (min-width:768px){#dm .dmRespRow .dmRespCol>.dmWidget{width:280px;max-width:100%}}@media (max-width:767px){#dm .dmInner .dmWidget{width:100%}}#dm .dmInner .dmWidget:not(.displayNone){display:inline-block}#dm .dmInner .dmWidget.flexButton:not(.displayNone){display:flex}#dm .dmInner .dmWidget.flexButton{display:flex;align-items:center;justify-content:center;padding:10px 7px}#dm .dmInner .dmWidget.flexButton .text{padding:0!important;flex-grow:1}#dm .dmInner .dmWidget{text-decoration:none;margin:10px 0;clear:both;position:relative;line-height:22px;box-shadow:none;background-image:none;padding:0;height:auto;border-style:solid;white-space:nowrap}#dm .dmInner .dmWidget:after{content:'';display:inline-block;height:100%;vertical-align:middle;width:0;margin-right:-.25em}#dm .dmInner .dmWidget .iconBg{position:absolute;left:0;width:50px;top:50%;margin-top:-13px}#dm .dmWidget .text{display:inline-block;vertical-align:middle;font-size:1.125em;line-height:normal;white-space:normal;padding:10px 7px;max-width:98%}#dm .dmRespRow.dmRespRowNoPadding,.dmContent,.dmInner ul:not(.defaultList),DIV.dmBody{padding:0}.dmNewParagraph[data-version]{line-height:initial}.dmNewParagraph[data-version] .text-align-left{text-align:left!important}.dmNewParagraph[data-version] .text-align-center{text-align:center!important}.dmNewParagraph[data-version] h1,.dmNewParagraph[data-version] h2,.dmNewParagraph[data-version] h4,.dmNewParagraph[data-version] p{margin-top:0;margin-bottom:0}@media (max-width:767px){.dmRoot .dmNewParagraph[data-version] .m-text-align-left{text-align:left!important}}#dm div.dmInner .dmform[data-layout=layout-3] .dmforminput>:not(label):not(div):not(small):not(.frc-banner){background:0;border:0;border-radius:0;-webkit-appearance:none;border-bottom:1px solid;height:30px}#dm .dmform:has(.spacing-container) .dmform-title.dmwidget-title{padding-inline:0;margin-block-start:0}.imageWidget{position:relative}.imageWidget img[width][height],img[width][height]{height:auto}*{border:0 solid #333;scrollbar-arrow-color:#fff;scrollbar-track-color:#F2F2F2;scrollbar-face-color:silver;scrollbar-highlight-color:silver;scrollbar-3dlight-color:silver;scrollbar-shadow-color:silver;scrollbar-darkshadow-color:silver;scrollbar-width:12px}body{width:100%;overflow:hidden;-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important}h1,h2,h3,h4,ul{margin-left:0;margin-right:0}.dmInner *{-webkit-font-smoothing:antialiased}a,img,li,ul{vertical-align:top}#iscrollBody,#site_content{position:relative}.dmOuter{word-wrap:break-word}.dmInner{min-width:768px!important;font-size:16px;background:#fff;color:#666}.dmDesktopBody .dmInner{min-width:960px}.dmInner a{color:#463939}.dmHeader{background:#68ccd1;color:#666;position:relative;width:100%}DIV.dmBody{clear:both}.dmContent{margin:0}#site_content ul:not(.defaultList){-webkit-padding-start:0;-moz-padding-start:0;list-style-position:inside}#innerBar{position:relative;height:36px;width:100%;font-size:20px;margin:0;z-index:80}.dmRespRowsWrapper{max-width:960px;margin:0 auto}.dmLargeBody .imageWidget:not(.displayNone){display:inline-block;max-width:100%}.imageWidget:not(.displayNone) img{width:100%}h3{font-weight:400;font-size:23px}#dm .dmRespColsWrapper{display:block}.dmNewParagraph{text-align:left;margin:8px 0;padding:2px 0}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol,.dmLargeBody .fHeader .dmRespRow .dmRespCol{padding-left:.75%;padding-right:.75%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:first-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:first-child{padding-left:0;padding-right:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:last-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:last-child{padding-right:0;padding-left:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:only-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:only-child{padding-left:0;padding-right:0}#innerBar.lineInnerBar{display:table;width:100%;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;font-size:20px;margin-top:30px;margin-bottom:30px;background-color:transparent;color:#666}#innerBar .titleLine{display:table-cell;vertical-align:middle;width:50%}.dmPageTitleRow:not(#innerBar){display:none}.titleLine hr{min-height:1px;background-color:rgba(102,102,102,.2)}.dmLargeBody .dmRespRow.dmFooterContent h3{margin-top:0}.dmStandardDesktop{display:block}#dmFirstContainer .dmRespRowsWrapper:after,#dmFirstContainer .dmRespRowsWrapper:before{content:"";display:table}.dmInner a{outline:0;vertical-align:inherit}.dmLinksMenu>ul{display:block;margin:0;font-size:inherit}.standardHeaderLayout .dmHeader{float:none;display:block;height:auto}.dmRespRow:not(.dmPlaceHolderRespRow) .dmRespColsWrapper .dmRespCol:not(.content-removed).empty-column,.dmRespRow:not(.dmPlaceHolderRespRow) .dmRespColsWrapper .dmRespCol:not(.content-removed):only-child:empty{min-height:100px}.dmRespRow:not(.dmPlaceHolderRespRow) .dmRespCol:not(.content-removed).empty-column,.dmRespRow:not(.dmPlaceHolderRespRow) .dmRespCol:not(.content-removed):empty{min-height:1px}.dmRespRow:not(.dmPlaceHolderRespRow) .dmRespColsWrapper .dmRespCol:not(.content-removed):only-child.empty-column{min-height:100px}.dmStandardDesktop{margin:0 auto}#dm h3.dmwidget-title[hide=true]{display:none}#dm .dmwidget-title{margin:10px 0;font-size:23px;text-shadow:none;text-transform:capitalize;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;word-wrap:normal}body{background-color:#eee}.main-navigation.unifiednav{display:flex;justify-content:flex-start;align-items:stretch;overflow:visible}.main-navigation.unifiednav ul{list-style:none;padding:0;margin:0;font-size:1rem}.main-navigation.unifiednav .unifiednav__container{display:flex;justify-content:flex-start;list-style:none}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap{display:flex;justify-content:flex-start;position:relative;font-weight:400}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap::before{content:'';-ms-grid-row-align:center;align-self:center;font-weight:700}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item{display:flex;justify-content:flex-start;align-items:center;flex-direction:row;color:inherit;text-decoration:none;position:relative;padding:12px 15px;margin:0;font-weight:inherit;letter-spacing:.03em}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding:0 15px}.main-navigation.unifiednav .unifiednav__container>.unifiednav__item-wrap>.unifiednav__item .nav-item-text{white-space:nowrap}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{content:'';width:100%;height:0;border:0 solid transparent;border-top-color:currentColor;display:block;opacity:0}#dm .dmWidget.button_2:not([data-buttonstyle]) .iconBg,#dm .dmWidget:not([data-buttonstyle]) .iconBg,.main-navigation.unifiednav .unifiednav__container .unifiednav__item:not(.unifiednav__item_has-sub-nav) .icon{display:none}.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::after,.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::before{opacity:1}.main-navigation.unifiednav.effect-text-fill{padding:12px 15px}.main-navigation.unifiednav.effect-text-fill .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text::before{content:attr(data-link-text);white-space:nowrap;position:absolute;overflow:hidden;background-color:transparent;width:0;height:100%;transform-origin:left;left:0;opacity:1}.main-navigation.unifiednav.effect-text-fill .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item .nav-item-text{position:relative}.main-navigation.unifiednav:not(.unifiednav_vertical)>.unifiednav__container{justify-content:inherit}#dm .p_hfcontainer nav.main-navigation.unifiednav{min-width:9em!important;text-align:initial!important}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container{flex-wrap:wrap;justify-content:inherit}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container .nav-item-text::before{text-align:left}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before,#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])[data-divider]:not([data-direction=RIGHT]) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{content:''}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])[data-divider=SLASH] .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after{content:'/'}.main-navigation.unifiednav.effect-text-fill .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item.dmNavItemSelected .nav-item-text::before{width:100%;text-align:left}#dm .dmBody .dmRespRowsWrapper{max-width:none;background-color:transparent}.dmLargeBody .dmRespRow{width:100%;max-width:none;margin-left:0;margin-right:0;padding-left:40px;padding-right:40px}.dm-bfs.dm-layout-home div.dmInner{background-color:#fff}.dmStandardDesktop .dmHeader{background-color:#68ccd1;max-width:100%}#dm div.dmRespCol>*{line-height:normal}#dm div.dmContent h1,#dm div.dmContent h1 *,#dm div.dmContent h2,#dm div.dmContent h2 *,#dm div.dmContent h4,#dm div.dmContent h4 *,#dm div.dmFooter h3,#dm div.dmInner{line-height:initial}#dm div.dmInner h1,#dm div.dmInner h2,#dm div.dmInner h3,#dm div.dmInner h4{font-family:Montserrat,"Montserrat Fallback"}#dm DIV.dmInner{background-repeat:no-repeat;background-image:url(https://irt-cdn.multiscreensite.com/ce0bb35f932b47bb809d0e37905542ba/dms3rep/multi/site_background_education-2087x1173.jpg);background-size:cover;background-position:50% 0}#dm div.dmOuter div.dmInner{background-position:center center;background-repeat:repeat;background-size:auto}#dm div.dmInner,#dm div.dmInner .dmRespCol{font-weight:300;font-size:16px}.dmLargeBody .dmBody .dmRespRowsWrapper{background-color:transparent}#dm .dmRespCol div.dmNewParagraph,#dm div.dmInner,#dm div.dmInner .dmRespCol{color:rgba(7,133,2,1);font-family:Poppins,"Poppins Fallback"}#dm div.dmContent h1,#dm div.dmContent h2,#dm div.dmContent h4,#dm div.dmFooter h3,#dm div.p_hfcontainer h3{font-family:Roboto,"Roboto Fallback";color:#000;direction:ltr;font-weight:400;font-style:normal;text-decoration:none}#dm div.dmContent h2,#dm div.dmContent h4{color:rgba(7,133,2,1);direction:ltr;font-family:Alata,"Alata Fallback";font-weight:400;font-style:normal}#dm .dmNewParagraph,#dm .dmwidget-title,#dm h1,#dm h2,#dm h3,#dm h4{direction:ltr;text-align:left}#dm div.dmContent .dmNewParagraph[data-version] h1{text-decoration:inherit}#dm div.dmContent .dmNewParagraph[data-version] h1 *,#dm div.dmContent h4{text-decoration:none}#dm #dm-outer-wrapper .imageWidget img{border-width:0;border-style:solid}#dm div.dmContent .dmNewParagraph[data-version] h4{text-decoration:inherit}#dm div.dmContent .dmNewParagraph[data-version] h4 *,#dm div.dmContent h2{text-decoration:none}#dm div.dmContent h2{font-size:44px}#dm div.dmContent .dmNewParagraph[data-version] h2{text-decoration:inherit}#dm div.dmContent .dmNewParagraph[data-version] h2 *{text-decoration:none}#dm .dmContent .dmRespRow{background-color:rgba(21,83,83,1);margin:0;padding:27px 0 0}h1,h2,h3,h4{data-inject:titleFont;font-family:Alata!important}p{data-inject:bodyFont;font-family:Roboto Slab!important}.dmButtonLink{data-inject:backgroundPrimaryColorOnWhite;background-color:#5171FF!important}#dm DIV.dmOuter DIV.dmInner{background-image:none;background-color:rgba(140,198,63,1)}#dm div.dmContent h1{font-size:64px}#dm .dmRespCol div.dmNewParagraph,#dm div.dmInner,#dm div.dmInner .dmRespCol{font-size:16px}#dm div.dmFooter h3,#dm div.p_hfcontainer h3{font-size:35px}#dm div.dmContent h4{font-size:26px}#dm .dmContent .dmRespRow .dmRespCol{margin:0;padding:0}@media screen and (max-width:1024px) and (min-width:768px){#dm div.dmFooter h3,#dm div.p_hfcontainer h3{font-size:27px!important}#dm div.dmContent h4{font-size:22px!important}#dm div.dmContent h2{font-size:32px!important}#dm div.dmContent h1{font-size:44px!important}}@media all{:root{--btn-text-direction:ltr;--btn-border-r-color:var(--btn-border-color);--btn-border-l-color:var(--btn-border-color);--btn-border-b-width:var(--btn-border-width);--btn-border-width:1px;--btn-border-radius:0px;--btn-border-t-width:var(--btn-border-width);--btn-border-tl-radius:var(--btn-border-radius);--btn-border-br-radius:var(--btn-border-radius);--btn-border-bl-radius:var(--btn-border-radius);--btn-bg-color:rgb(81, 113, 255);--btn-border-color:rgba(0, 0, 0, 0);--btn-border-tr-radius:var(--btn-border-radius);--btn-border-r-width:var(--btn-border-width);--btn-bg-image:none;--btn-border-b-color:var(--btn-border-color);--btn-border-l-width:var(--btn-border-width);--btn-border-t-color:var(--btn-border-color);--btn-text-align:center;--btn-text-color:rgba(255, 255, 255, 1);--btn-text-decoration:none;--btn-text-font-weight:400;--btn-icon-color:rgb(247, 247, 247);--btn-icon-fill:rgb(247, 247, 247);--btn-icon-wrpr-display:none;--btn-hover-border-b-color:var(--btn-hover-border-color);--btn-hover-bg:var(--btn-bg-color);--btn-hover-border-t-color:var(--btn-hover-border-color);--btn-hover-border-r-color:var(--btn-hover-border-color);--btn-hover-border-l-color:var(--btn-hover-border-color);--btn-hover-border-color:var(--btn-border-color);--btn-hover-text-color:var(--btn-text-color);--btn-hover-text-font-weight:var(--btn-text-font-weight);--btn-hover-text-decoration:var(--btn-text-decoration);--btn-hover-text-font-style:var(--btn-text-font-style)}}@media (min-width:0px) and (max-width:767px){:root{--btn-text-font-size:16px}}#dm .dmWidget:not([data-buttonstyle]){overflow:initial;background-clip:border-box;border-radius:1px}#dm .dmWidget:not([data-buttonstyle]) .text,#dm .dmWidget:not([data-buttonstyle]).flexButton{padding:16px 0}@media (min-width:768px){#dm .dmRespRow .dmRespCol>.dmWidget{width:222px}}#dm div.dmInner #site_content .dmWidget{background-color:var(--btn-bg-color);background-image:var(--btn-bg-image);border-color:var(--btn-border-color);border-bottom-color:var(--btn-border-b-color);border-left-color:var(--btn-border-l-color);border-right-color:var(--btn-border-r-color);border-top-color:var(--btn-border-t-color);border-radius:var(--btn-border-radius);border-bottom-left-radius:var(--btn-border-bl-radius);border-bottom-right-radius:var(--btn-border-br-radius);border-top-left-radius:var(--btn-border-tl-radius);border-top-right-radius:var(--btn-border-tr-radius);border-width:var(--btn-border-width);border-bottom-width:var(--btn-border-b-width);border-left-width:var(--btn-border-l-width);border-right-width:var(--btn-border-r-width);border-top-width:var(--btn-border-t-width);direction:var(--btn-text-direction);text-align:var(--btn-text-align)}#dm div.dmInner #site_content .dmWidget span.text{color:var(--btn-text-color);font-size:var(--btn-text-font-size);font-weight:var(--btn-text-font-weight);text-decoration:var(--btn-text-decoration)}#dm .p_hfcontainer .main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer .main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before,#dm .p_hfcontainer .u_1631965431.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,#dm .p_hfcontainer .u_1631965431.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before,nav.u_1631965431.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{font-size:14px!important}#dm div.dmInner #site_content .dmWidget span.icon{color:var(--btn-icon-color);fill:var(--btn-icon-fill)}#dm div.dmInner #site_content .dmWidget:not([data-buttonstyle]) .iconBg{display:var(--btn-icon-wrpr-display)}#dm .dmInner .dmHeader.u_hcontainer:before,#dm .dmInner .dmHeader:before,#dm .dmInner .u_hcontainer:before{opacity:.5!important;background-color:#fff!important}#dm .dmInner div.dmHeader.u_hcontainer:before,#dm .dmInner div.dmHeader:before,#dm .dmInner div.u_hcontainer:before{background-color:rgba(0,0,0,1)!important;opacity:.53!important}#dm .p_hfcontainer .u_1631965431.main-navigation.unifiednav .unifiednav__container:not([data-depth])>.unifiednav__item-wrap>.unifiednav__item{padding-right:30px!important;padding-left:30px!important}nav.u_1631965431{color:#fff!important}#dm .p_hfcontainer div.u_1493509199 .dmforminput input{color:rgba(140,198,63,1)!important}#dm .dmInner div.dmHeader,#dm .dmInner div.dmHeader.u_hcontainer,#dm .dmInner div.u_hcontainer{background-color:rgba(0,55,55,1)!important;box-shadow:none!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important;border-style:solid!important;border-width:0!important;border-color:rgba(0,55,55,1)!important;background-image:url(https://lirp.cdn-website.com/8f142869/dms3rep/multi/opt/AdobeStock_783568558-4b775e6b.jpeg?dm-skip-opt=true),url(data:image/png-2880w;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=)!important}#dm .p_hfcontainer .u_1673896578{width:100%!important}#dm .dmInner div.fHeader .dmHeader[freeheader=true]{padding:15px 0!important}.fHeader #hcontainer.dmHeader[freeheader=true]{padding-top:initial!important;padding-bottom:initial!important}nav.u_1631965431.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::after,nav.u_1631965431.main-navigation.unifiednav:not(.unifiednav_vertical) .unifiednav__container:not([data-depth])>.unifiednav__item-wrap:not(:last-child)::before{padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important}nav.u_1631965431{float:none!important;top:0!important;left:0!important;width:877.99px!important;position:relative!important;height:auto!important;min-height:auto!important;max-width:100%!important;justify-content:center!important;align-items:stretch!important;min-width:0!important;text-align:start!important;padding:6.8px 15px!important;margin:0 auto!important}#dm .dmInner div.u_hcontainer,#dm .p_hfcontainer div.u_1063894103,#dm .p_hfcontainer div.u_1355554402,#dm .p_hfcontainer div.u_1673896578{text-align:center!important;left:0!important;float:none!important;position:relative!important;height:auto!important}#dm .dmInner div.fHeader.dmHeaderContainer #hcontainer.dmHeader[freeheader=true]{margin:0 0 7px!important;padding:0 0 300px!important}#dm .dmInner div.u_hcontainer{top:0!important;width:100%!important;max-width:100%!important;min-width:0!important;background-position:50% 50%!important;background-repeat:no-repeat!important;background-size:cover!important;background-attachment:initial!important;padding:0!important;margin:0 auto!important}#dm .dmInner div.dmHeader.u_hcontainer{padding-bottom:20px!important;padding-top:25px!important;background-position:50% 50%!important;background-repeat:no-repeat!important;background-size:cover!important;background-attachment:initial!important}#dm .dmInner div.dmHeader{background-position:50% 50%!important;background-repeat:no-repeat!important;background-size:cover!important;background-attachment:initial!important}#dm .p_hfcontainer div.u_1355554402{top:0!important;width:auto!important;min-height:auto!important;max-width:100%!important;min-width:0!important;padding:2px 40px!important;margin:0!important}#dm .p_hfcontainer div.u_1673896578{top:0!important;width:calc(100% - 0px)!important;min-height:auto!important;max-width:407px!important;min-width:25px!important;padding:0!important;margin:0 auto!important}#dm .p_hfcontainer div.u_1063894103{top:0!important;width:auto!important;min-height:auto!important;max-width:100%!important;min-width:0!important;padding:27.5px 40px!important;margin:0!important}#dm .p_hfcontainer nav.u_1631965431{float:none!important;top:0!important;left:0!important;width:calc(100% - 179px)!important;position:relative!important;height:auto!important;min-height:auto!important;max-width:602px!important;justify-content:center!important;align-items:stretch!important;min-width:25px!important;text-align:start!important;padding:6.8px 15px!important;margin:0 auto!important}#dm .dmBody .u_1747872605,#dm .dmBody .u_1759564241,.sc-header-custom{width:100%!important}.u_1071347716,.u_1090612629,.u_1327247125,.u_1468192709,.u_1772176668,.u_1827202653{background-size:auto!important;background-repeat:repeat!important;margin:0!important;text-align:center!important;color:#000!important;background-image:none!important}#dm .dmBody div.dmform-error{font-style:normal!important}.sc-header-custom{position:absolute!important;z-index:2!important}.u_1090612629{background-color:rgba(0,0,0,0)!important;background-position:0 0!important;padding:0 3.95px!important}.u_1468192709{background-color:#fff!important;background-position:0 0!important;padding:0!important}.u_1772176668{background-color:rgba(0,0,0,0)!important;background-position:0 0!important;padding:0 0 0 7.91px!important}.u_1827202653{background-color:#fff!important;background-position:0 0!important;padding:70px 40px!important}#dm .dmBody div.u_1499202892,#dm .dmBody div.u_1566806852,#dm .dmBody div.u_1767368618,.u_1071347716,.u_1327247125{background-color:rgba(0,0,0,0)!important}.u_1071347716{background-position:0 0!important;padding:0 3.95px!important}.u_1327247125{background-position:0 0!important;padding:0 0 0 7.91px!important}#dm .d-page-1716942098 DIV.dmInner,#dm .dmBody div.u_1309160353,#dm .dmBody div.u_1981226677{background-size:cover!important;background-repeat:no-repeat!important}#dm .dmBody div.u_1468192709,#dm .dmBody div.u_1827202653{background-color:rgba(39,46,75,1)!important}#dm .dmBody div.u_1827202653{border-style:solid!important;border-width:0!important}#dm .dmBody div.u_1071347716{border-style:solid!important;border-color:transparent!important;border-width:1px!important}#dm .dmBody div.u_1163053733{background-image:none!important}#dm .dmBody div.u_1759564241 img{border-radius:0!important}#dm .dmBody div.u_1844946662{background-color:rgba(0,0,0,0)!important}#dm .dmBody div.u_1813891088{background-color:rgba(39,46,75,1)!important}#dm .dmBody a.u_1495705722{background-color:rgba(140,198,63,1)!important;border-radius:18px!important}#dm .dmBody div.u_1309160353{background-image:url(https://lirp.cdn-website.com/8f142869/dms3rep/multi/opt/AdobeStock_966734076-1920w.jpeg),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=)!important}#dm .dmBody div.u_1579372173 .dmforminput input{color:rgba(140,198,63,1)!important}#dm .dmBody div.u_1759564241,#dm .dmBody div.u_1865047226,#dm .dmBody div.u_1979948235{width:calc(100% - 0px)!important;left:0!important;min-width:25px!important}#dm .dmBody div.u_1981226677{background-color:rgba(0,0,0,0)!important;background-image:url(https://lirp.cdn-website.com/8f142869/dms3rep/multi/opt/AdobeStock_783568558-1920w.jpeg),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=)!important}#dm .dmBody .u_1981226677:before{opacity:.5!important;background-color:#fff!important}#dm .dmBody div.u_1981226677:before{background-color:rgba(0,0,0,1)!important;opacity:.54!important}#dm .d-page-1716942098 DIV.dmInner{background-attachment:fixed!important;background-position:50% 50%!important}@media screen and (max-width:1024px) and (min-width:768px){#dm div.dmContent h1{max-width:540px!important}}#dm .dmBody div.u_1071347716,#dm .dmBody div.u_1327247125,#dm .dmBody div.u_1772176668{padding:15px!important}#dm .dmBody div.u_1495787066{padding-top:0!important;padding-left:5px!important;padding-right:5px!important}#dm .dmBody div.u_1389164474{padding-top:0!important}#dm .dmBody div.u_1865047226{float:none!important;top:0!important;position:relative!important;height:auto!important;max-width:100%!important;display:block!important;min-height:auto!important;padding:2px 0!important;margin:8px 0!important}#dm .dmBody div.u_1979948235{display:block!important;float:none!important;top:0!important;position:relative!important;height:auto!important;max-width:562px!important;min-height:auto!important;padding:0!important;margin:16px 0 0!important}#dm .dmBody div.u_1759564241,#dm .dmBody div.u_1767368618{float:none!important;top:0!important;position:relative!important;height:auto!important;max-width:100%!important;min-height:auto!important;text-align:center!important}#dm .dmBody div.u_1844946662{margin:0!important;padding:80px 60px 80px 16px!important}#dm .dmBody div.u_1759564241{important:true!important;padding:0!important;margin:7px 0 0!important}#dm .dmBody div.u_1309160353{background-position:50% 50%!important;margin:7px 0!important;padding:0 0 40px 40px!important}#dm .dmBody div.u_1499202892{padding:0 5px 0 0!important;margin:0!important}#dm .dmBody div.u_1090612629{padding:15px!important}#dm .dmBody div.u_1076291502{padding-top:0!important}#dm .dmBody div.u_1813891088{width:auto!important;padding:0 0 0 40px!important;margin:0 0 7px!important}#dm .dmBody div.u_1767368618{left:0!important;width:auto!important;min-width:0!important;padding:0!important;margin:0!important}#dm .dmBody div.u_1002498117,#dm .dmBody div.u_1596890923{padding:2px 0!important;min-height:auto!important;float:none!important;top:0!important;left:0!important;position:relative!important;height:auto!important}#dm .dmBody div.u_1002498117{width:calc(100% - 1px)!important;max-width:203.84px!important;min-width:25px!important;margin:14px auto 8px!important}#dm .dmBody div.u_1596890923{width:calc(100% - 0px)!important;max-width:202.38px!important;min-width:25px!important;margin:-96px 0 8px!important}#dm .dmBody div.u_1467253397{float:none!important;top:0!important;left:0!important;width:calc(100% - 1px)!important;position:relative!important;height:auto!important;min-height:auto!important;max-width:203.84px!important;min-width:25px!important;padding:2px 0!important;margin:-96px auto 8px!important}#dm .dmBody div.u_1195114762,#dm .dmBody div.u_1542561649,#dm .dmBody div.u_1723995911{width:calc(100% - 0px)!important;min-width:25px!important;padding:2px 0!important}#dm .dmBody div.u_1542561649{float:none!important;top:0!important;left:0!important;position:relative!important;height:auto!important;max-width:116.91px!important;display:block!important;min-height:auto!important;margin:-96px 0 8px!important}#dm .dmBody div.u_1195114762,#dm .dmBody div.u_1468192709,#dm .dmBody div.u_1723995911{top:0!important;left:0!important;position:relative!important;height:auto!important;max-width:100%!important;min-height:auto!important;float:none!important}#dm .dmBody div.u_1195114762{display:block!important;margin:8px auto!important}#dm .dmBody div.u_1723995911{margin:13.82px .5px 8px 0!important}#dm .dmBody div.u_1468192709{width:auto!important;min-width:0!important;text-align:center!important;padding:0!important;margin:0 0 7px!important}#dm .dmBody div.u_1285403333,#dm .dmBody div.u_1951629411{min-width:25px!important;padding:2px 0!important;max-width:100%!important;height:auto!important;top:0!important;left:0!important;position:relative!important}#dm .dmBody div.u_1285403333{float:none!important;width:calc(100% - 0px)!important;min-height:auto!important;margin:8px auto!important}#dm .dmBody div.u_1951629411{float:none!important;width:calc(100% - -5px)!important;display:block!important;min-height:auto!important;margin:-96px 0 8px -5px!important}#dm .dmBody div.u_1566806852{float:none!important;top:0!important;left:0!important;width:auto!important;position:relative!important;height:auto!important;max-width:100%!important;min-width:0!important;text-align:center!important;min-height:auto!important;padding:96px 0 18px!important;margin:0!important}#dm .dmBody div.u_1163053733{background-repeat:no-repeat!important;background-size:contain!important;margin:0!important;padding:0!important}#dm .dmBody div.u_1827202653{padding:0 15px 34px 0!important;margin:8px 0 7px!important}#dm .dmBody a.u_1495705722{width:calc(100% - 182px)!important;height:auto!important;min-height:43.44px!important;float:none!important;top:0!important;left:0!important;position:relative!important;max-width:164.6px!important;min-width:25px!important;text-align:center!important;margin:25px 166px 10px 182px!important;padding:9px 0!important}#dm .dmBody div.u_1981226677{width:auto!important;margin:0!important;padding:100px 40px!important}#dm .dmBody div.u_1747872605{margin:50px 0 0!important;padding:0!important}.font-size-30,.size-30{font-size:30px!important}.font-size-55,.size-55{font-size:55px!important}.font-size-22,.size-22{font-size:22px!important}.font-size-18,.size-18{font-size:18px!important}.dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop=none]),.dmDesktopBody:not(.editGrid) [data-anim-extended]{visibility:hidden}#\31 070325888,#\31 119359600,#\31 152623299,#\31 156614838,#\31 214568741,#\31 235439982,#\31 263111166,#\31 295762958,#\31 311466106,#\31 326223593,#\31 400439645,#\31 408908320,#\31 429219927,#\31 430225026,#\31 457451089,#\31 495705722,#\31 597144325,#\31 631965431,#\31 642352859,#\31 653796003,#\31 730635696,#\31 732542699,#\31 755172271,#\31 800787738,#\31 850524969,#\31 870265943,#\31 873486417,#\31 962673187,#\31 974920365{order:0;flex-direction:row} #dm .dmPhotoGallery.newPhotoGallery .dmPhotoGalleryHolder {display: none;} @media (max-width:767px){ [data-hidden-on-mobile] {display:none!important}}
+    .dmDesktopBody [data-anim-desktop]:not([data-anim-desktop='none']) {
+      visibility: hidden;
+    }
+
+    
+</style>
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Belgrano Fallback";
+  src: local('Arial');
+  ascent-override: 87.5736%;
+  descent-override: 24.5914%;
+  size-adjust: 113.0478%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Staatliches Fallback";
+  src: local('Arial');
+  ascent-override: 110.3516%;
+  descent-override: 34.8479%;
+  size-adjust: 86.0885%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Indie Flower Fallback";
+  src: local('Arial');
+  ascent-override: 101.0963%;
+  descent-override: 50.8533%;
+  size-adjust: 96.0177%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Amiri Fallback";
+  src: local('Arial');
+  ascent-override: 123.7258%;
+  descent-override: 69.7884%;
+  size-adjust: 90.846%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Montserrat Fallback";
+  src: local('Arial');
+  ascent-override: 84.9466%;
+  descent-override: 22.0264%;
+  size-adjust: 113.954%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Poppins Fallback";
+  src: local('Arial');
+  ascent-override: 92.326%;
+  descent-override: 30.7753%;
+  line-gap-override: 8.793%;
+  size-adjust: 113.7274%;
+}@font-face {
+  font-family: "Noto Sans Fallback";
+  src: local('Arial');
+  ascent-override: 100.1833%;
+  descent-override: 27.459%;
+  size-adjust: 106.7044%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Bebas Neue Fallback";
+  src: local('Arial');
+  ascent-override: 116.5002%;
+  descent-override: 38.8334%;
+  size-adjust: 77.2531%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "DM Sans Fallback";
+  src: local('Arial');
+  ascent-override: 94.3696%;
+  descent-override: 29.4905%;
+  size-adjust: 105.1186%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Noto Serif Fallback";
+  src: local('Arial');
+  ascent-override: 98.7162%;
+  descent-override: 27.0569%;
+  size-adjust: 108.2903%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Roboto Slab Fallback";
+  src: local('Arial');
+  ascent-override: 97.7562%;
+  descent-override: 25.2818%;
+  size-adjust: 107.1903%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Ubuntu Fallback";
+  src: local('Arial');
+  ascent-override: 90.8147%;
+  descent-override: 18.4163%;
+  line-gap-override: 2.7283%;
+  size-adjust: 102.6265%;
+}@font-face {
+  font-family: "Alata Fallback";
+  src: local('Arial');
+  ascent-override: 107.1847%;
+  descent-override: 27.2834%;
+  size-adjust: 102.6265%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Alice Fallback";
+  src: local('Arial');
+  ascent-override: 89.5621%;
+  descent-override: 23.0556%;
+  size-adjust: 101.4938%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Rock Salt Fallback";
+  src: local('Arial');
+  ascent-override: 112.6419%;
+  descent-override: 54.69%;
+  line-gap-override: 2.2209%;
+  size-adjust: 140.708%;
+}@font-face {
+  font-family: "Cinzel Fallback";
+  src: local('Arial');
+  ascent-override: 76.7937%;
+  descent-override: 29.2697%;
+  size-adjust: 127.0938%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Overlock Fallback";
+  src: local('Arial');
+  ascent-override: 106.0693%;
+  descent-override: 27.8898%;
+  size-adjust: 91.0726%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Lato Fallback";
+  src: local('Arial');
+  ascent-override: 101.3181%;
+  descent-override: 21.865%;
+  size-adjust: 97.4159%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Delius Fallback";
+  src: local('Arial');
+  ascent-override: 97.1488%;
+  descent-override: 26.6026%;
+  size-adjust: 101.4938%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Rubik Fallback";
+  src: local('Arial');
+  ascent-override: 88.5654%;
+  descent-override: 23.6806%;
+  size-adjust: 105.5717%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Exo Fallback";
+  src: local('Arial');
+  ascent-override: 95.3209%;
+  descent-override: 31.1077%;
+  size-adjust: 105.1186%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Open Sans Fallback";
+  src: local('Arial');
+  ascent-override: 101.1768%;
+  descent-override: 27.7323%;
+  size-adjust: 105.6416%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+
+  <link type="application/rss+xml" rel="alternate" href="https://www.greenstarsolar.co.uk/feed/rss2"/>
+  <link type="application/atom+xml" rel="alternate" href="https://www.greenstarsolar.co.uk/feed/atom"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.greenstarsolar.co.uk/"/>
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="home"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody responsiveTablet "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true" desktop-global-classes="" tablet-global-classes=""> <div dmtemplateid="StandardLayoutMultiD" class="standardHeaderLayout dm-bfs dm-layout-home hasAnimations rows-1200 dmPageBody d-page-1716942098 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div> <div id="iscrollBody"> <div id="site_content"> <div class="dmHeaderContainer fHeader d-header-wrapper"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer hasBackgroundOverlay" freeheader="true" headerlayout="b58ba5b5703b4cd7b5f5f7951565dc87===horizontal-layout-5" layout="3e258119881349f1b0afec8887fc1e4b===header" mini-header-show-only-navigation-row="true"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch sc-header-custom" id="1709005236"> <div class="u_1063894103 dmRespRow" id="1063894103"> <div class="dmRespColsWrapper" id="1850524969"> <div class="dmRespCol large-12 medium-12 small-12" id="1952843573"> <div class="u_1673896578 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1673896578"><img src="https://lirp.cdn-website.com/8f142869/dms3rep/multi/opt/Greenstar_Solar_Logo_WHITE.TAG_STACKED-3x-488w.png" alt="" id="1695173739" class="" width="1920" height="832" data-dm-image-path="https://irp.cdn-website.com/8f142869/dms3rep/multi/Greenstar_Solar_Logo_WHITE.TAG_STACKED-3x.png" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1355554402 dmRespRow" id="1355554402"> <div class="dmRespColsWrapper" id="1070325888"> <div class="dmRespCol large-12 medium-12 small-12" id="1794266046"> <nav class="u_1631965431 effect-text-fill main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_5" layout-sub="submenu_horizontal_2" data-show-vertical-sub-items="HOVER" data-divider="SLASH" id="1631965431" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_00  " target="" data-target-page-alias="" data-auto="selected-page"> <span class="nav-item-text " data-link-text="HOME" data-auto="page-text-style">HOME<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/#ABOUTUS" class="unifiednav__item  dmUDNavigationItem_01010134704  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="ABOUT US" data-auto="page-text-style">ABOUT US<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/#Systems" class="unifiednav__item  dmUDNavigationItem_01010118849  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="SYSTEMS" data-auto="page-text-style">SYSTEMS<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="1644754972"> <div class="dmRespColsWrapper" id="1263111166"> <div class="dmRespCol empty-column large-12 medium-12 small-12" id="1109712431"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow "> <div class="dmRespColsWrapper"> <div class="large-12 dmRespCol"> <div id="innerBar" class="innerBar lineInnerBar dmDisplay_None"> <div class="titleLine display_None"><hr/></div> 
+<!-- Page title is hidden in css for new responsive sites. It is left here only so we don't break old sites. Don't copy it to new layouts --> <div id="pageTitleText"></div> 
+ <div class="titleLine display_None"><hr/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_home dm-home-page" themewaschanged="true" desktop-global-classes="" tablet-global-classes=""> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div class="u_1981226677 dmRespRow hide-for-large hide-for-medium hasBackgroundOverlay" id="1981226677" data-page-element-type="section" data-page-element-id="1635452894"> <div class="dmRespColsWrapper" id="1457451089"> <div class="dmRespCol large-12 medium-12 small-12 u_1603495265" id="1603495265"> <div class="u_1747872605 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1747872605"><img src="https://lirp.cdn-website.com/8f142869/dms3rep/multi/opt/Greenstar_Solar_Logo_WHITE.TAG_STACKED-3x-1920w.png" alt="" id="1679870028" class="" data-dm-image-path="https://irp.cdn-website.com/8f142869/dms3rep/multi/Greenstar_Solar_Logo_WHITE.TAG_STACKED-3x.png" width="1920" height="832" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1813891088 fullBleedChanged fullBleedMode" id="1813891088" data-page-element-type="section" data-page-element-id="1585237922" mode="1"> <div class="dmRespColsWrapper" id="1311466106"> <div class="u_1844946662 dmRespCol large-6 medium-6 small-12" id="1844946662"> <div class="u_1979948235 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1979948235" style="text-align: left; transition: none 0s ease 0s; display: block;" data-ai-tag="Engaging heading"> <h2 class="text-align-left m-size-24 size-30 m-text-align-left"><span style="display: initial; color: rgb(255, 255, 255);" class="m-font-size-24 font-size-30">Our goal is to design and install a solar energy system that perfectly matches your unique energy goals</span></h2> 
+</div> 
+ <a data-display-type="block" class="u_1495705722 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="/#Systems" data-element-type="dButtonLinkId" id="1495705722"> <span class="iconBg" aria-hidden="true" id="1988191569"> <span class="icon hasFontIcon icon-star" id="1769682008"></span> 
+</span> 
+ <span class="text" id="1485564881">Learn More</span> 
+</a> 
+</div> 
+ <div class="u_1309160353 dmRespCol empty-column large-6 medium-6 small-12" id="1309160353"></div> 
+</div> 
+</div> 
+ <div class="u_1468192709 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1468192709" data-page-element-type="section" data-page-element-id="1569000834"> <div class="dmRespColsWrapper" id="1152623299"> <div class="u_1163053733 dmRespCol small-12 large-5 medium-5" id="1163053733"> <div class="u_1759564241 imageWidget align-center hasFullWidth" data-element-type="image" data-widget-type="image" id="1759564241" data-anim-extended="eyJkZXNrdG9wIjp7InRyaWdnZXIiOiJlbnRyYW5jZSIsImFuaW1hdGlvbiI6InNsaWRlSW5Db21ibyIsImR1cmF0aW9uIjowLjY1LCJkZWxheSI6MCwiaW50ZW5zaXR5IjoxLCJkaXIiOiJsZWZ0In19" data-anim-desktop="slideInCombo"><img src="https://irp.cdn-website.com/8f142869/dms3rep/multi/AdobeStock_855615596.jpeg?dm-skip-opt=true" alt="" id="1585068339" class="" width="1920" height="1076" data-dm-image-path="https://irp.cdn-website.com/8f142869/dms3rep/multi/AdobeStock_855615596.jpeg?dm-skip-opt=true" onerror="handleImageLoadError(this)"/></div> 
+ <div class="u_1579372173 dmform default native-inputs" data-element-type="dContactUsRespId" captcha="true" data-require-captcha="true" data-captcha-position="bottomleft" id="1579372173" data-layout="layout-4"> <h3 class="dmform-title dmwidget-title" id="1325636957">BOOK YOUR FREE SURVEY</h3> 
+ <div class="dmform-wrapper" id="1177987404" captcha-lang="en"> <form method="post" class="dmRespDesignRow" locale="ENGLISH" id="1171698933"> <div class="spacing-container" id="1441248382"> <div class="dmforminput required  small-12 medium-4 large-4  dmRespDesignCol" id="1457176124"> <label for="1300869044" id="1948594554" data-dm-for="dmform-0">Name:</label> 
+<input type="text" class="" name="dmform-0" id="1300869044"/><input type="hidden" name="label-dmform-0" value="Name" id="1156092341"/></div> 
+ <div class="dmforminput required  small-12 medium-4 large-4  dmRespDesignCol" id="1240063869"> <label for="1541969990" id="1446977034" data-dm-for="dmform-1">Email:</label> 
+<input type="email" class="" name="dmform-1" id="1541969990"/><input type="hidden" name="label-dmform-1" value="Email" id="1377336609"/></div> 
+ <div class="dmforminput required  small-12 medium-4 large-4  dmRespDesignCol" id="1993075991"> <label for="1274152624" id="1027405236" data-dm-for="dmform-2">Phone:</label> 
+<input type="tel" class="" name="dmform-2" id="1274152624"/><input type="hidden" name="label-dmform-2" value="Phone" id="1360831317"/></div> 
+ <div class="dmforminput large-12 medium-12 dmRespDesignCol" id="1908288584"> <label for="1059794262" id="1498409470" data-dm-for="dmform-3">Message:</label> 
+ <textarea name="dmform-3" id="1059794262"></textarea> 
+<input type="hidden" name="label-dmform-3" value="Message" id="1164148023"/></div> 
+</div> 
+ <span id="1441248382_clear" class="dmWidgetClear"></span> 
+ <div class="dmformsubmit dmWidget R" id="1469640740"><input class="" name="submit" type="submit" value="Send Message" id="1728961710"/></div> 
+<input name="dmformsendto" type="hidden" value="O0wrseIfFLsSlLR4GAldF7BuQvG2sHT2fmNnT6Q+MtlOdVCq9zdQkf/aJn5xeMIu7TPwq6Cm+kw=" id="1142688049" class="" data-dec="true"/><input class="dmActionInput" type="hidden" name="action" value="/_dm/s/rt/widgets/dmform.submit.jsp" id="1791588909"/><input name="dmformsubject" type="hidden" value="Website enquiry" id="1047324767" class="" data-email-subject="Website enquiry"/><input name="dmformfrom" type="hidden" value="WWW.GREENSTARSOLAR.CO.UK" id="1870175417" class=""/><input name="dmformautoreplyenabled" type="hidden" value="true" id="1182826715"/><input name="dmformautoreplyfrom" type="hidden" value="form-processor" id="1049673145"/><input name="dmformautoreplysubject" type="hidden" value="Thank you for your submission" id="1367581305"/><input name="dmformautoreplymsg" type="hidden" value="V2UndmUgcmVjZWl2ZWQgeW91ciBtZXNzYWdlIC0gdGhhbmsgeW91LiBPbmUgb2Ygb3VyIHRlYW0gbWVtYmVycyB3aWxsIGdldCBiYWNrIHRvIHlvdSBzb29uLg==" id="1031065962"/><input name="dmformautoreplyincludeformcopy" type="hidden" value="true" id="1011816265"/><input name="dmformsubmitparams" type="hidden" value="8mpKnCSiNQXK/d9M7IDrSzRkXjNcoSR4Sn/BPOWPSx7VE7FY48HKiNDJkM799VePvbwvkEkO1e3pun4R++y3dwoFU6Ys1Jo2vN6Qssq0iw0I502cc7OailEZpWf3u732mJM4Uu2ykLPP0ai9TtNQjdeOSnjLGmCamrdWblD1HmsRBLlpzkYi7CYXCsY39jzFcmS9WRhXbjNAfl70ATwcWhgQnMx5rnVQXGNSDGHjrvNLD/tmLuUt8E9JRE0+NI5oVjvJfrwlzeblLFJO4pjI9vTIkJpzv0REevfQ7WmpRNCDM4F3y7jkMJIUHtub6QON5mkrzYUKBCr0lr+DO5tNJd0ObA0AlIMtPhsEcCF7PDnxmyHYVBsTH81twWGkwA40zpjnAkordbCICFIPT0Arr0RmaA0MXvUHx8m6X4beOtdmjmhiZAklv6/qKf9YLGGLEjHJPcGpWMmUk6YsZEA0m35Wj7W+AI2rMtx3E3/gWz36WUT98NB6X2vjVqG11lbNMtx3E3/gWz0rkQ0vooCrop+BhDwWL5zjgyD7JKR9krn/2iZ+cXjCLiEHvb1Mqu0u" data-dec="true"/><input type="hidden" name="page_uuid" value="6636e19258134b4fb733394284f71306"/></form> 
+</div> 
+ <div class="dmform-success" style="display:none" id="1375734600">Thank you for contacting us.<br id="1544207441"/>We will get back to you as soon as possible.</div> 
+ <div class="dmform-error" style="display:none" id="1281497518">Oops, there was an error sending your message.<br id="1380039510"/>Please try again later.</div> 
+</div> 
+</div> 
+ <div class="u_1827202653 dmRespCol small-12 large-7 medium-7" id="1827202653"> <div class="u_1767368618 dmRespRow" id="1767368618"> <div class="dmRespColsWrapper" id="1400439645"> <div class="u_1499202892 dmRespCol small-12 large-2 medium-2" id="1499202892"> <div class="u_1865047226 dmNewParagraph" data-element-type="paragraph" id="1865047226" style="transition: none; display: block; text-align: left;" data-version="5"> <h1 class="text-align-left m-size-36 size-55"><span style="display: initial; color: rgb(140, 198, 63);" class="m-font-size-36 font-size-55">&nbsp; &nbsp; 1</span></h1> 
+</div></div> 
+ <div class="u_1090612629 dmRespCol small-12 large-4 medium-4" id="1090612629"> <div class="u_1285403333 dmNewParagraph" id="1285403333" style="display: block; transition: none; text-align: left;" data-element-type="paragraph" data-version="5"> <h4 class="text-align-center size-22 m-size-18"><span style="display: initial; color: rgb(140, 198, 63);" class="font-size-22 m-font-size-18">Survey and Consultation</span></h4> 
+</div> <div class="u_1002498117 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1002498117" style="transition: none; text-align: left; display: block;"><p class="m-size-14 size-18 text-align-left"><span class="m-font-size-14 font-size-18" style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';" class="m-font-size-14 font-size-18">We start with a face to face consultation to understand you energy needs and goals, followed by a thorough sight assessment to optimize system design</span> 
+</span></p></div> 
+</div> 
+ <div class="u_1076291502 dmRespCol small-12 large-2 medium-2" id="1076291502"> <div class="u_1195114762 dmNewParagraph" data-element-type="paragraph" id="1195114762" style="transition: none; display: block; text-align: left;" data-version="5"> <h1 class="m-size-36 text-align-left size-55"><span style="color: rgb(140, 198, 63); display: initial;" class="font-size-55 m-font-size-36">&nbsp; &nbsp;2</span></h1> 
+</div></div> 
+ <div class="u_1327247125 dmRespCol small-12 large-4 medium-4" id="1327247125"> <div class="u_1617545358 dmNewParagraph" id="1617545358" style="display:block;line-height:initial;" data-element-type="paragraph" data-version="5"> <h4 class="text-align-center"><span style="color: rgb(140, 198, 63); display: initial;">Design and Quotation</span></h4> 
+</div> <div class="u_1723995911 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1723995911" style="transition: none; text-align: left; display: block;"><p class="m-size-14 size-18 text-align-left"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';" class="font-size-18 m-font-size-14">Our expert designers create a tailored solar solution focused on maximizing efficiency and savings while minimizing cost</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1566806852 dmRespRow" id="1566806852" data-anim-desktop="fadeInCombo" data-anim-extended="eyJkZXNrdG9wIjp7InRyaWdnZXIiOiJlbnRyYW5jZSIsImFuaW1hdGlvbiI6ImZhZGVJbkNvbWJvIiwiZHVyYXRpb24iOjEsImRlbGF5IjowLCJpbnRlbnNpdHkiOjEuMiwiZGlyIjoicmlnaHQifX0="> <div class="dmRespColsWrapper" id="1870265943"> <div class="u_1495787066 dmRespCol small-12 large-2 medium-2" id="1495787066"> <div class="u_1951629411 dmNewParagraph" data-element-type="paragraph" id="1951629411" style="transition: none; display: block; text-align: left;" data-version="5"> <h1 class="text-align-left m-size-36 size-55"><span style="display: initial; color: rgb(140, 198, 63);" class="m-font-size-36 font-size-55">&nbsp; &nbsp;3</span></h1> 
+</div></div> 
+ <div class="u_1071347716 dmRespCol small-12 large-4 medium-4" id="1071347716"> <div class="u_1596890923 dmNewParagraph" id="1596890923" style="display: block; transition: none; text-align: left;" data-element-type="paragraph" data-version="5"> <h4 class="text-align-center"><span style="color: rgb(140, 198, 63); display: initial;">Installation</span></h4> 
+</div> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1724867799" style="transition: opacity 1s ease-in-out;"><p class="m-size-14 size-18 text-align-left"><span class="m-font-size-14 font-size-18" style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';" class="m-font-size-14 font-size-18">Our in-house technicians conduct a precise installation for reliable, long term performance. All installations include free bird entry prevention</span> 
+</span></p></div> 
+</div> 
+ <div class="u_1389164474 dmRespCol small-12 large-2 medium-2" id="1389164474"> <div class="u_1542561649 dmNewParagraph" data-element-type="paragraph" id="1542561649" style="transition:none 0s ease 0s;display:block;line-height:initial;" data-version="5"> <h1 class="text-align-left m-size-36 size-55"><span style="display: initial; color: rgb(140, 198, 63);" class="m-font-size-36 font-size-55">&nbsp; &nbsp;4</span></h1> 
+</div></div> 
+ <div class="u_1772176668 dmRespCol small-12 large-4 medium-4" id="1772176668"> <div class="u_1467253397 dmNewParagraph" id="1467253397" style="display: block; transition: none; text-align: left;" data-element-type="paragraph" data-version="5"> <h4 class="text-align-center"><span class="" style="display: initial; color: rgb(140, 198, 63);"><span style="display: initial; color: rgb(140, 198, 63);">Aftercare</span> 
+</span></h4> 
+</div> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1113371779" style="transition: opacity 1s ease-in-out;"><p class="text-align-left m-size-14 size-18"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';" class="font-size-18 m-font-size-14">&nbsp;In person aftercare appointment and handover with ongoing support and real time app monitoring plus an insurance backed guarantee</span></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_ABOUTUS dmRespRow hasBackgroundOverlay" id="ABOUTUS" data-anchor="ABOUT US"> <div class="dmRespColsWrapper" id="1214568741"> <div class="u_1633068672 dmRespCol small-12 medium-12 large-12" id="1633068672"> <div class="u_1237136540 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1237136540" style="transition: opacity 1s ease-in-out;"> <h2 class="m-size-29 text-align-center size-36"><span style="color: rgb(255, 255, 255); display: initial;" class="font-size-36 m-font-size-29">We're With You Every Step Of The Way</span></h2> 
+</div> 
+ <div class="u_1961928579 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1961928579" style="transition: none; text-align: left; display: block;"><p class="text-align-left size-18 m-size-14"><span style="display: initial;"><br/></span><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';" class="font-size-18 m-font-size-14">To ensure your solar energy system is a perfect match for your unique energy goals, we take a highly personalised approach. Our process begins with an in-depth face-to-face consultation to understand your energy usage patterns, environmental goals, and budget considerations. From there, our expert surveyors/designers conduct a thorough site assessment, analysing factors like roof orientation, shading, sunlight, cable runs and location of inverters and batteries to determine the optimal system design. Using cutting-edge technology and high-quality products, we then design a customised solution that maximises energy efficiency and cost savings. Finally, our skilled in-house technicians handle the entire installation process with precision, ensuring that your system is ready to perform reliably and efficiently for years to come.</span></p><p class="m-size-14 size-18"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';" class="font-size-18 m-font-size-14">Once your system is up and running, our commitment continues with comprehensive in-person aftercare appointment, app training and ongoing system monitoring. Through an intuitive app, you can track and understand your energy production. We also include a 5-year insurance-backed guarantee for your extra peace of mind, ensuring that your investment is fully protected. Throughout the entire process, we stay in close communication so you feel informed and confident at every step of your solar journey and long into the future.</span><span style="display: initial;"><br/></span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_Systems dmRespRow" id="Systems" data-anchor="Systems"> <div class="dmRespColsWrapper" id="1974920365"> <div class="dmRespCol large-12 medium-12 small-12 u_1353101437" id="1353101437"> <div class="u_1835443879 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1835443879" style="transition: opacity 1s ease-in-out;"> <h2 class="text-align-center"><span style="display: initial; color: rgb(255, 255, 255);">Learn More About your Solar Options</span></h2> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1258624171 dmRespRow" id="1258624171" data-page-element-type="section" data-page-element-id="1632012411"> <div class="dmRespColsWrapper" id="1800787738"> <div class="u_1991998318 dmRespCol small-12 large-6 medium-6" id="1991998318" data-anim-desktop="fadeInLeft" data-anim-mobile="fadeInLeft"> <div class="u_1975529769 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1975529769"> <a id="1256508967"><img src="https://lirp.cdn-website.com/8f142869/dms3rep/multi/opt/AdobeStock_553388506--281-29-638w.jpeg" alt="" id="1502538860" class="" data-dm-image-path="https://irp.cdn-website.com/8f142869/dms3rep/multi/AdobeStock_553388506--281-29.jpeg" width="1150" height="640" data-hover-effect="forward" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div class="u_1167438163 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1167438163"><img src="https://lirp.cdn-website.com/8f142869/dms3rep/multi/opt/AdobeStock_586564893-0f77e5a0-84f93a01-638w.jpeg" alt="" id="1129603321" class="" width="1892" height="949" data-dm-image-path="https://irp.cdn-website.com/8f142869/dms3rep/multi/AdobeStock_586564893-0f77e5a0-84f93a01.jpeg" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+ <div class="u_1104665758 dmRespCol small-12 large-6 medium-6" id="1104665758"> <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton u_1597144325" file="false" href="/solar-panels-for-home" data-element-type="dButtonLinkId" id="1597144325" target="_blank"> <span class="iconBg" aria-hidden="true" id="1965291611"> <span class="icon hasFontIcon icon-star" id="1058652723"></span> 
+</span> 
+ <span class="text" id="1245485219">SOLAR PANELS FOR HOME</span> 
+</a> 
+ <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton u_1295762958" file="false" href="/solar-panels-for-home#battystorageforhome" data-element-type="dButtonLinkId" id="1295762958"> <span class="iconBg" aria-hidden="true" id="1681545818"> <span class="icon hasFontIcon icon-star" id="1999861143"></span> 
+</span> 
+ <span class="text" id="1410190798">BATTERY STORAGE FOR HOME</span> 
+</a> 
+ <a data-display-type="block" class="u_1653796003 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="/landing-page" data-element-type="dButtonLinkId" id="1653796003"> <span class="iconBg" aria-hidden="true" id="1749738216"> <span class="icon hasFontIcon icon-star" id="1810905752"></span> 
+</span> 
+ <span class="text" id="1501226279">SOLAR PANELS FOR BUSINESS</span> 
+</a> 
+ <a data-display-type="block" class="u_1429219927 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton" file="false" href="/landing-page" data-element-type="dButtonLinkId" id="1429219927"> <span class="iconBg" aria-hidden="true" id="1361203087"> <span class="icon hasFontIcon icon-star" id="1138619255"></span> 
+</span> 
+ <span class="text" id="1687480477">BATTERY STORAGE FOR BUSINESS</span> 
+</a> 
+ <div class="imageWidget align-center u_1808848611" data-element-type="image" data-widget-type="image" id="1808848611"><img src="https://lirp.cdn-website.com/8f142869/dms3rep/multi/opt/sklkad-559w.PNG" alt="" id="1269706538" class="" width="637" height="277" data-dm-image-path="https://irp.cdn-website.com/8f142869/dms3rep/multi/sklkad.PNG" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1774659860 dmRespRow fullBleedChanged fullBleedMode hasBackgroundOverlay mobile-columns-reversed dmSectionParallaxNew" style="text-align: center;" id="1774659860" data-page-element-type="section" data-page-element-id="1089712525"> <div class="dmRespColsWrapper" id="1119359600"> <div class="u_1649598885 dmRespCol small-12 large-5 medium-5" id="1649598885" data-anim-desktop="fadeIn"> <div class="u_1404917563 dmNewParagraph" data-element-type="paragraph" id="1404917563" style="transition:opacity 1s ease-in-out;line-height:initial;" data-version="5"> <h2 class="text-align-center size-36 m-size-29"><span style="display: initial; color: rgb(255, 255, 255);" class="font-size-36 m-font-size-29">Join The Solar Revolution</span></h2> 
+</div> <div class="u_1907083528 dmDividerWrapper clearfix" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1907083528"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1053671867"/></div> 
+ <div class="u_1308119163 dmNewParagraph" id="1308119163" style="transition: none; display: block; text-align: center;" data-version="5"> <ul class="defaultList bullet"><li class="m-size-16 text-align-left size-20" style="color: rgb(255, 255, 255);"><span style="color:rgb(255, 255, 255);font-weight:normal;display:initial;font-family:Alata, 'Alata Fallback';" class="m-font-size-16 font-size-20">Significant reduction in energy bills<br/></span></li><li class="m-size-16 text-align-left size-20" style="color: rgb(255, 255, 255);"><span style="color:rgb(255, 255, 255);font-weight:normal;display:initial;font-family:Alata, 'Alata Fallback';" class="m-font-size-16 font-size-20">Increased property value <br/></span></li><li class="m-size-16 text-align-left size-20" style="color: rgb(255, 255, 255);"><span style="color:rgb(255, 255, 255);font-weight:normal;display:initial;font-family:Alata, 'Alata Fallback';" class="m-font-size-16 font-size-20">Energy independence and zero inflation<br/></span></li><li class="m-size-16 text-align-left size-20" style="color: rgb(255, 255, 255);"><span style="color:rgb(255, 255, 255);font-weight:normal;display:initial;font-family:Alata, 'Alata Fallback';" class="m-font-size-16 font-size-20">Improved EPC rating <br/></span></li><li class="m-size-16 text-align-left size-20" style="color: rgb(255, 255, 255);"><span style="color:rgb(255, 255, 255);font-weight:normal;display:initial;font-family:Alata, 'Alata Fallback';" class="m-font-size-16 font-size-20">Low maintenance<br/></span></li><li class="m-size-16 text-align-left size-20" style="color: rgb(255, 255, 255);"><span style="color:rgb(255, 255, 255);font-weight:normal;display:initial;font-family:Alata, 'Alata Fallback';" class="m-font-size-16 font-size-20">Low cost overnight battery charging<br/></span></li><li class="m-size-16 text-align-left size-20" style="color: rgb(255, 255, 255);"><span style="color:rgb(255, 255, 255);font-weight:normal;display:initial;font-family:Alata, 'Alata Fallback';" class="m-font-size-16 font-size-20">Reduced carbon footprint<br/></span></li><li class="text-align-left size-20 m-size-16" style="color: rgb(255, 255, 255);"><span style="color:rgb(255, 255, 255);font-weight:normal;display:initial;font-family:Alata, 'Alata Fallback';" class="m-font-size-16 font-size-20">Fantastic return on investment</span><span class="m-font-size-16 font-size-20" style="display: initial;"><br/></span><span style="display: initial;"><br/></span></li></ul> 
+</div></div> 
+ <div class="u_1447468476 dmRespCol small-12 large-7 medium-7" id="1447468476"> <div data-element-type="spacer" class="u_1487561687 dmSpacer" id="1487561687"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1528474311 dmRespRow" id="1528474311" data-page-element-type="section" data-page-element-id="1249768675"> <div class="dmRespColsWrapper" id="1156614838"> <div class="dmRespCol large-12 medium-12 small-12 u_1130151440" id="1130151440"> <div class="u_1356297431 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1356297431" data-ai-tag="Section title"> <h1 class="text-align-center m-size-35 size-50" style="line-height: 1.1;"><span style="color: rgb(255, 255, 255); display: unset;" class="font-size-50 m-font-size-35" m-font-size-set="true">Latest Testimonials</span></h1> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1712773563 dmRespRow fullBleedChanged fullBleedMode" id="1712773563" data-page-element-type="section" data-page-element-id="1249768675"> <div class="dmRespColsWrapper" id="1642352859"> <div class="u_1630335731 dmRespCol small-12 large-3 medium-3" id="1630335731"> <div class="u_1283238992 graphicWidget graphicWidgetV2 graphicWidgetV3" data-element-type="graphic" data-widget-type="graphic" id="1283238992"> <svg id="1422708839" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 117.25 20" class="svg u_1422708839" data-icon-custom="true" data-icon-name="stars.svg"> <defs> <style>.cls-1-1670365560-1670365560 {
+        fill: #00000;
+        stroke-width: 0px;
+      }</style> 
+</defs> 
+ <path class="cls-1-1670365560-1670365560" d="M9.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.14.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99L.86,8.85c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M33.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.15.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M57.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.15.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M81.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.14.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M105.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.14.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+</svg> 
+</div> 
+ <div class="u_1918290309 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1918290309" data-ai-tag="Testimonial 1" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="text-align-center m-size-14 size-18"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';" class="m-font-size-14 font-size-18">Incredibly helpful from the beginning, with no pushy sales tactics. Jack answered all our questions thoroughly, and the technical knowledge and communication from both the survey team and the install team was excellent. Tom and his team arrived on time, did a great job, and left everything clean and tidy. Highly recommended.&nbsp;</span></p><p class="text-align-center" style="line-height: 1.5;"><span style="display: initial;"><br/></span></p></div> 
+ <div class="u_1660251650 default dmShape" font-size-0="" id="1660251650" dmle_extension="shape" data-element-type="shape" text-position="center_center" data-hover-effect="float" wr="true" version="2" icon="true" surround="true" adwords="" shape-text="" shape-description="" shape-image="https://irp.cdn-website.com/8f142869/dms3rep/multi/dog-profile-the-havanese.jpg" alt-text="" tooltip="" shape-type="circle" shape-color="black" border-color-shape="" overlay-color="#ffffff" image-position="xMidYMin" shape-keep-proportion="false" shape-layout="layout1" border-width-shape="0" overlay-opacity="50" link-attrs="e30="> <a data-link-id="shape-link-container" id="1985501414"> <svg width="100%" height="100%" viewbox="0.00 0.00 100 100" preserveaspectratio="none" id="1408761127"> <g> <clippath id="shape-1660251650"> <path d="M 50, 50 m -50, 0 a 50,50 0 1,0 100,0 a 50,50 0 1,0 -100,0"></path> 
+</clippath> 
+ <image clip-path="url(#shape-1660251650)" width="100%" height="100%" xlink:href="https://lirp.cdn-website.com/8f142869/dms3rep/multi/opt/dog-profile-the-havanese-1920w.jpg" preserveaspectratio="xMidYMin slice"></image> 
+<!-- In order to add stroke on image, need to create new shape without fill just with stroke --></g> 
+</svg> 
+</a> 
+</div> 
+ <div class="u_1408532213 dmRespRow" id="1408532213" mode="2"> <div class="dmRespColsWrapper" id="1430225026"> <div class="u_1846046596 dmRespCol small-12 medium-12 large-12" id="1846046596"> <div class="u_1174614624 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1174614624" data-ai-tag="Testimonial 1 name" background-image":""}"="" style="text-align: left; display: block; transition: none 0s ease 0s;"><p class="text-align-center"><strong style="color: rgb(255, 255, 255); font-weight: bold; display: unset;">Judy T</strong></p></div> 
+ <div class="u_1727922562 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1727922562" data-ai-tag="Testimonial 1: days/months/years ago" background-image":""}"="" style="text-align: left; display: block; transition: none 0s ease 0s;"><p class="text-align-center"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">28 Oct</span></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1858607558 dmRespCol small-12 large-3 medium-3" id="1858607558"> <div class="u_1442958464 graphicWidget graphicWidgetV2 graphicWidgetV3" data-element-type="graphic" data-widget-type="graphic" id="1442958464" data-layout="graphic-style-1"> <svg id="1226455490" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 117.25 20" class="svg u_1226455490" data-icon-custom="true" data-icon-name="stars.svg"> <defs> <style>.cls-1-1670365560-1670365560 {
+        fill: #00000;
+        stroke-width: 0px;
+      }</style> 
+</defs> 
+ <path class="cls-1-1670365560-1670365560" d="M9.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.14.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99L.86,8.85c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M33.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.15.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M57.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.15.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M81.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.14.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M105.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.14.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+</svg> 
+</div> 
+ <div class="u_1891080654 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1891080654" data-ai-tag="Testimonial 2" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="text-align-center"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';" class="font-size-18 m-font-size-14"><br/></span></p><p class="size-18 m-size-14 text-align-center"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';" class="font-size-18 m-font-size-14">It&rsquo;s a pleasure to leave this positive review. From our initial contact with Jon our surveyor to the Admin team, the install team and Tom the Electrician, the entire experience was seamless. We&rsquo;re already benefiting from the solar energy, and we can&rsquo;t say enough about the professionalism of everyone involved. This was good, honest service, well done to all involved.&nbsp;</span></p><p class="text-align-center" style="line-height: 1.5;"><span style="display: initial;"><br/></span></p></div> 
+ <div class="u_1978610291 default dmShape" font-size-0="" id="1978610291" dmle_extension="shape" data-element-type="shape" text-position="center_center" data-hover-effect="float" wr="true" version="2" icon="true" surround="true" adwords="" shape-text="" shape-description="" shape-image="https://irp.cdn-website.com/8f142869/dms3rep/multi/avatars-000502223853-nb2i48-t1080x1080.jpg" alt-text="" tooltip="" shape-type="circle" shape-color="black" border-color-shape="" overlay-color="#ffffff" image-position="xMidYMid" shape-keep-proportion="false" shape-layout="layout1" border-width-shape="0" overlay-opacity="50" link-attrs="e30="> <a data-link-id="shape-link-container" id="1708770774"> <svg width="100%" height="100%" viewbox="0.00 0.00 100 100" preserveaspectratio="none" id="1671169366"> <g> <clippath id="shape-1978610291"> <path d="M 50, 50 m -50, 0 a 50,50 0 1,0 100,0 a 50,50 0 1,0 -100,0"></path> 
+</clippath> 
+ <image clip-path="url(#shape-1978610291)" width="100%" height="100%" xlink:href="https://lirp.cdn-website.com/8f142869/dms3rep/multi/opt/avatars-000502223853-nb2i48-t1080x1080-1920w.jpg" preserveaspectratio="xMidYMid slice"></image> 
+<!-- In order to add stroke on image, need to create new shape without fill just with stroke --></g> 
+</svg> 
+</a> 
+</div> 
+ <div class="u_1660590875 dmRespRow" id="1660590875" mode="2"> <div class="dmRespColsWrapper" id="1732542699"> <div class="u_1575209234 dmRespCol small-12 medium-12 large-12" id="1575209234"> <div class="u_1003510718 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1003510718" data-ai-tag="Testimonial 2 name" background-image":""}"="" style="text-align: left; display: block; transition: none 0s ease 0s;"><p class="text-align-center"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">Clive S</span></p></div> 
+ <div class="u_1479586614 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1479586614" data-ai-tag="Testimonial 2: days/months/years ago" background-image":""}"="" style="text-align: left; display: block; transition: none 0s ease 0s;"><p class="text-align-center"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">31 Oct</span></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1704194958 dmRespCol small-12 large-3 medium-3" id="1704194958"> <div class="u_1764440764 graphicWidget graphicWidgetV2 graphicWidgetV3" data-element-type="graphic" data-widget-type="graphic" id="1764440764"> <svg id="1529103701" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 117.25 20" class="svg u_1529103701" data-icon-custom="true" data-icon-name="stars.svg"> <defs> <style>.cls-1-1670365560-1670365560 {
+        fill: #00000;
+        stroke-width: 0px;
+      }</style> 
+</defs> 
+ <path class="cls-1-1670365560-1670365560" d="M9.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.14.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99L.86,8.85c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M33.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.15.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M57.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.15.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M81.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.14.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M105.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.14.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+</svg> 
+</div> 
+ <div class="u_1810628512 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1810628512" data-ai-tag="Testimonial 3" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="m-size-14 size-18 text-align-center"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';" class="m-font-size-14 font-size-18">From quoting all the way through to installation, commissioning and aftercare this company has been fantastic. The system was well specified and priced compared to other quotes received. Jack, Jon and the chaps that did the install and were all very professional in there approach. We made the right choice.</span></p><p class="text-align-center" style="line-height: 1.5;"><span style="display: initial;"><br/></span></p></div> 
+ <div class="u_1686807551 default dmShape" font-size-0="" id="1686807551" dmle_extension="shape" data-element-type="shape" text-position="center_center" data-hover-effect="float" wr="true" version="2" icon="true" surround="true" adwords="" shape-text="" shape-description="" shape-image="https://irp.cdn-website.com/8f142869/dms3rep/multi/Blog_image_2.webp" alt-text="" tooltip="" shape-type="circle" shape-color="black" border-color-shape="" overlay-color="#ffffff" image-position="xMinYMid" shape-keep-proportion="false" shape-layout="layout1" border-width-shape="0" overlay-opacity="50" link-attrs="e30="> <a data-link-id="shape-link-container" id="1183306831"> <svg width="100%" height="100%" viewbox="0.00 0.00 100 100" preserveaspectratio="none" id="1754850843"> <g> <clippath id="shape-1686807551"> <path d="M 50, 50 m -50, 0 a 50,50 0 1,0 100,0 a 50,50 0 1,0 -100,0"></path> 
+</clippath> 
+ <image clip-path="url(#shape-1686807551)" width="100%" height="100%" xlink:href="https://lirp.cdn-website.com/8f142869/dms3rep/multi/opt/Blog_image_2-1920w.webp" preserveaspectratio="xMinYMid slice"></image> 
+<!-- In order to add stroke on image, need to create new shape without fill just with stroke --></g> 
+</svg> 
+</a> 
+</div> 
+ <div class="u_1174951745 dmRespRow" id="1174951745" mode="2"> <div class="dmRespColsWrapper" id="1755172271"> <div class="u_1317770879 dmRespCol small-12 medium-12 large-12" id="1317770879"> <div class="u_1541903718 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1541903718" data-ai-tag="Testimonial 3 name" background-image":""}"="" style="text-align: left; transition: none;"><p class="text-align-center"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">Paula P</span></p></div> 
+ <div class="u_1186659404 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1186659404" data-ai-tag="Testimonial 3: days/months/years ago" background-image":""}"="" style="text-align: left; display: block; transition: none 0s ease 0s;"><p class="text-align-center"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">1 Nov</span></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1056387389 dmRespCol small-12 large-3 medium-3" id="1056387389"> <div class="u_1541611864 graphicWidget graphicWidgetV2 graphicWidgetV3" data-element-type="graphic" data-widget-type="graphic" id="1541611864"> <svg id="1547889046" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 117.25 20" class="svg u_1547889046" data-icon-custom="true" data-icon-name="stars.svg"> <defs> <style>.cls-1-1670365560-1670365560 {
+        fill: #00000;
+        stroke-width: 0px;
+      }</style> 
+</defs> 
+ <path class="cls-1-1670365560-1670365560" d="M9.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.14.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99L.86,8.85c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M33.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.15.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M57.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.15.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M81.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.14.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+ <path class="cls-1-1670365560-1670365560" d="M105.58,1.26c.34-.82,1.51-.82,1.86,0l2.03,4.82c.14.34.47.58.85.61l5.27.42c.89.07,1.25,1.17.57,1.75l-4.01,3.4c-.29.24-.41.62-.32.99l1.23,5.08c.21.86-.74,1.54-1.5,1.08l-4.51-2.72c-.32-.19-.73-.19-1.05,0l-4.51,2.72c-.76.46-1.71-.22-1.5-1.08l1.23-5.08c.09-.36-.04-.74-.32-.99l-4.01-3.4c-.68-.58-.32-1.68.57-1.75l5.27-.42c.38-.03.7-.26.85-.61l2.03-4.82Z"></path> 
+</svg> 
+</div> 
+ <div class="u_1578985671 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1578985671" data-ai-tag="Testimonial 4" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="m-size-14 text-align-center size-18" style="line-height: 1.5;"><span class="m-font-size-14 font-size-18" style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';" class="m-font-size-14 font-size-18">Greenstar are a top class company to deal with. Their whole approach is absolutely unique in this day and age. Totally seamless transition from start to finish with all due respects to Jack who organised everything from the scaffold, panel install and all the paperwork and aftercare. Thank you Jack and the team, very much appreciated.<br/> Very satisfied customer</span> 
+</span></p></div> 
+ <div class="u_1830211463 default dmShape" font-size-0="" id="1830211463" dmle_extension="shape" data-element-type="shape" text-position="center_center" data-hover-effect="float" wr="true" version="2" icon="true" surround="true" adwords="" shape-text="" shape-description="" shape-image="https://irp.cdn-website.com/8f142869/dms3rep/multi/768px-Eo_circle_pink_white_letter-r.svg.png" alt-text="" tooltip="" shape-type="circle" shape-color="black" border-color-shape="" overlay-color="#ffffff" image-position="xMidYMid" shape-keep-proportion="false" shape-layout="layout1" border-width-shape="0" overlay-opacity="50" link-attrs="e30="> <a data-link-id="shape-link-container" id="1308148107"> <svg width="100%" height="100%" viewbox="0.00 0.00 100 100" preserveaspectratio="none" id="1852375606"> <g> <clippath id="shape-1830211463"> <path d="M 50, 50 m -50, 0 a 50,50 0 1,0 100,0 a 50,50 0 1,0 -100,0"></path> 
+</clippath> 
+ <image clip-path="url(#shape-1830211463)" width="100%" height="100%" xlink:href="https://lirp.cdn-website.com/8f142869/dms3rep/multi/opt/768px-Eo_circle_pink_white_letter-r.svg-1920w.png" preserveaspectratio="xMidYMid slice"></image> 
+<!-- In order to add stroke on image, need to create new shape without fill just with stroke --></g> 
+</svg> 
+</a> 
+</div> 
+ <div class="u_1181575219 dmRespRow" id="1181575219" mode="2"> <div class="dmRespColsWrapper" id="1235439982"> <div class="u_1899072406 dmRespCol small-12 medium-12 large-12" id="1899072406"> <div class="u_1940598575 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1940598575" data-ai-tag="Testimonial 4 name" background-image":""}"="" style="text-align: left; transition: none;"><p class="text-align-center"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">Robert G</span></p></div> 
+ <div class="u_1493119630 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1493119630" data-ai-tag="Testimonial 4: days/months/years ago" background-image":""}"="" style="text-align: left; display: block; transition: none 0s ease 0s;"><p class="text-align-center"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">6 Nov</span></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="sticky-widgets-container-global" id="1122902485"></div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="u_1289157781 dmRespRow dmFooterContent" id="1289157781" data-page-element-type="section" data-page-element-id="1939878972"> <div class="dmRespColsWrapper" id="1962673187"> <div class="dmRespCol small-12 medium-12 large-12" id="1008808273"> <div class="dmRespRow u_1272842112 fullBleedChanged fullBleedMode" id="1272842112"> <div class="dmRespColsWrapper" id="1408908320"> <div class="u_1844630844 dmRespCol small-12 large-6 medium-6" id="1844630844"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1062085968" style="transition: opacity 1s ease-in-out 0s;"><h2 style="color:rgb(255, 255, 255);" class=""><span style="display: initial; color: rgb(255, 255, 255);">Let&rsquo;s talk!﻿</span></h2></div> 
+ <div class="u_1372779110 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1372779110" style="transition: none 0s ease 0s; text-align: left; display: block;"> <span style="color:rgb(255, 255, 255);display:initial;">Have a question or comment? Let us know.</span> 
+</div> 
+ <div class="dmform default native-inputs u_1493509199" data-element-type="dContactUsRespId" captcha="true" data-require-captcha="true" data-captcha-position="bottomleft" id="1493509199" data-layout="layout-3"> <h3 class="dmform-title dmwidget-title" id="1579980408" hide="true">Contact Us</h3> 
+ <div class="dmform-wrapper" id="1501560187" captcha-lang="en"> <form method="post" class="dmRespDesignRow" locale="ENGLISH" id="1000351026"> <div class="spacing-container" id="1809126481"> <div class="dmforminput required  small-12 medium-4 large-4  dmRespDesignCol" id="1366772608"> <label for="1292180707" id="1568988362" data-dm-for="dmform-0">Name:</label> 
+<input type="text" class="" name="dmform-0" id="1292180707"/><input type="hidden" name="label-dmform-0" value="Name" id="1619231752"/></div> 
+ <div class="dmforminput required  small-12 medium-4 large-4  dmRespDesignCol" id="1496401159"> <label for="1200505509" id="1806509116" data-dm-for="dmform-1">Email:</label> 
+<input type="email" class="" name="dmform-1" id="1200505509"/><input type="hidden" name="label-dmform-1" value="Email" id="1120111941"/></div> 
+ <div class="dmforminput required  small-12 medium-4 large-4  dmRespDesignCol" id="1901302504"> <label for="1091111464" id="1307213064" data-dm-for="dmform-2">Phone:</label> 
+<input type="tel" class="" name="dmform-2" id="1091111464"/><input type="hidden" name="label-dmform-2" value="Phone" id="1770602199"/></div> 
+ <div class="dmforminput large-12 medium-12 dmRespDesignCol" id="1609882760"> <label for="1629417741" id="1938714347" data-dm-for="dmform-3">Message:</label> 
+ <textarea name="dmform-3" id="1629417741"></textarea> 
+<input type="hidden" name="label-dmform-3" value="Message" id="1540542838"/></div> 
+</div> 
+ <div class="dmformsubmit dmWidget R" id="1813885560"><input class="" name="submit" type="submit" value="Send Message" id="1174953972"/></div> 
+<input name="dmformsendto" type="hidden" value="O0wrseIfFLt4HR/NXQcZrhmY87bJHC2qoJLosecbuujez4czw+1uZHLGKsXSZRIU73kO4KQzX2o=" id="1739141431" data-dec="true"/><input class="dmActionInput" type="hidden" name="action" value="/_dm/s/rt/widgets/dmform.submit.jsp" id="1374470096"/><input name="dmformsubject" type="hidden" value="" id="1159628937"/><input name="dmformfrom" type="hidden" value="" id="1268118537"/><input name="dmformautoreplyenabled" type="hidden" value="true" id="1401015468"/><input name="dmformautoreplyfrom" type="hidden" value="form-processor" id="1426539502"/><input name="dmformautoreplysubject" type="hidden" value="Thank you for your submission" id="1953401559"/><input name="dmformautoreplymsg" type="hidden" value="V2UndmUgcmVjZWl2ZWQgeW91ciBtZXNzYWdlIC0gdGhhbmsgeW91LiBPbmUgb2Ygb3VyIHRlYW0gbWVtYmVycyB3aWxsIGdldCBiYWNrIHRvIHlvdSBzb29uLg==" id="1990244725"/><input name="dmformautoreplyincludeformcopy" type="hidden" value="true" id="1221820157"/><input name="dmformsubmitparams" type="hidden" value="8mpKnCSiNQXK/d9M7IDrSxJJnhBlHGKyRRVcNRBJMh1Zw7eCXbh2Px4pHf7L5UbErz90/AiWb36ZTEM0BsBl+e6biYRh3kpZrhpU2pYWFBcJH4lY+hgQtxSdqk06xMzLJhcKxjf2PMVyZL1ZGFduM0B+XvQBPBxaGBCczHmudVBcY1IMYeOu80sP+2Yu5S3wT0lETT40jmhWO8l+vCXN5uUsUk7imMj29MiQmnO/RER699DtaalE0IMzgXfLuOQwkhQe25vpA43maSvNhQoEKvSWv4M7m00l3Q5sDQCUgy0+GwRwIXs8OfGbIdhUGxMfzW3BYaTADjTOmOcCSit1sIgIUg9PQCuvRGZoDQxe9QfHybpfht4612aOaGJkCSW/r+op/1gsYYsSMck9walYyZSTpixkQDSbflaPtb4Ajasy3HcTf+BbPfpZRP3w0Hpfa+NWobXWVs0y3HcTf+BbPSuRDS+igKuin4GEPBYvnOODIPskpH2Suf/aJn5xeMIuIQe9vUyq7S4=" data-dec="true"/><input type="hidden" name="page_uuid" value="c00e9ca7d7844a669c2b50edfe2c4b6a"/></form> 
+</div> 
+ <div class="dmform-success" style="display:none" id="1238199357">Thank you for contacting us.<br id="1040606535"/>We will get back to you as soon as possible.</div> 
+ <div class="dmform-error" style="display:none" id="1292178294">Oops, there was an error sending your message.<br id="1610782208"/>Please try again later.</div> 
+</div> 
+</div> 
+ <div class="u_1905319480 dmRespCol small-12 large-6 medium-6" id="1905319480"> <div class="u_1650496412 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1650496412" style="transition: none 0s ease 0s; text-align: left; display: block;"> <span style="color:rgb(255, 255, 255);display:initial;">Email us:</span> 
+</div> 
+ <div class="u_1498182374 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1498182374" style="transition: opacity 1s ease-in-out 0s;"> <h3><span style="display: initial; color: rgb(255, 255, 255);">info@greenstarsolar.co.uk</span></h3> 
+</div> 
+ <div class="u_1909863989 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1909863989" data-styletopreserve="{"background-image":""}"><p class="m-size-19 size-24"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';" class="font-size-24 m-font-size-19">Office: 02382 123763</span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1635099963" style="transition: opacity 1s ease-in-out;"><p class="text-align-left"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">Address:</span></p><p class="text-align-left"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">Greenstar</span></p><p class="text-align-left"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">4500 Parkway</span></p><p class="text-align-left"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">Solent Business Park</span></p><p class="text-align-left"><span class="" style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">Whiteley</span> 
+</span></p><p class="text-align-left"><span class="" style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">Fareham</span> 
+</span></p><p class="text-align-left"><span style="color:rgb(255, 255, 255);display:initial;font-family:Alata, 'Alata Fallback';">PO15 7AZ</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1736976272 dmDividerWrapper clearfix" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1736976272"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1698114217"/></div> 
+ <div class="u_1474157336 dmRespRow fullBleedChanged fullBleedMode" id="1474157336"> <div class="dmRespColsWrapper" id="1730635696"> <div class="u_1110733777 dmRespCol small-12 large-5 medium-5" id="1110733777"> <div class="u_1989227983 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1989227983"> <a id="1344325767"><img src="https://lirp.cdn-website.com/8f142869/dms3rep/multi/opt/Greenstar_Solar_Logo_WHITE.TAG_HZ-3x-531w.png" alt="" id="1077647289" class="" data-dm-image-path="https://irp.cdn-website.com/8f142869/dms3rep/multi/Greenstar_Solar_Logo_WHITE.TAG_HZ-3x.png" width="1920" height="386" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="u_1017434623 dmRespCol small-12 large-5 medium-5" id="1017434623"> <div class="u_1073630024 widget-1f5975 dmCustomWidget" data-lazy-load="" data-title="" id="1073630024" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="1f5975986930429f819d4cd2154b5c4a" data-widget-version="24" data-widget-config="eyJjb3B5cmlnaHRUZXh0IjoiPHAgY2xhc3M9XCJydGVCbG9ja1wiPkFsbCBSaWdodHMgUmVzZXJ2ZWQgfCBHcmVlbnN0YXIgU29sYXIgTFREPC9wPiJ9"> <div class="copyright"> <span class="copyright-year">&copy; 2025&nbsp;</span> 
+ <span><p class="rteBlock">All Rights Reserved | Greenstar Solar LTD</p></span> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1226451046 dmRespCol small-12 large-2 medium-2" id="1226451046"> <a data-display-type="block" class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient flexButton u_1326223593 button_2" file="false" href="/privacy-policy" data-element-type="dButtonLinkId" id="1326223593"> <span class="iconBg" aria-hidden="true" id="1072236234"> <span class="icon hasFontIcon icon-star" id="1755278115"></span> 
+</span> 
+ <span class="text" id="1050792784">PRIVACY/TERMS</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link rel="preload" href="https://irp.cdn-website.com/fonts/css2?family=Belgrano:ital,wght@0,400&family=Staatliches:ital,wght@0,400&family=Indie+Flower:ital,wght@0,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue:ital,wght@0,400&family=DM+Sans:ital,wght@0,100..1000;1,100..1000&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Alata:ital,wght@0,400&family=Alice:ital,wght@0,400&family=Rock+Salt:ital,wght@0,400&family=Cinzel:ital,wght@0,400..900;1,400..900&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Delius:ital,wght@0,400&family=Rubik:ital,wght@0,300..900;1,300..900&family=Exo:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;subset=latin-ext&amp;display=swap"  as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="preload" as="style" fetchpriority="low" onload="loadCSS(this)" href="https://static.cdn-website.com/mnlt/production/5752/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link rel="preload" href="https://irp.cdn-website.com/WIDGET_CSS/1eeb3365c8b376fd586ea511a8e7f7d7.css" id="widgetCSS" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="home"] #dm [data-show-on-page-only="home"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/8f142869/files/8f142869_withFlex_1.min.css?v=10" id="siteGlobalCss" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<!-- Page CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/8f142869/files/8f142869_home_withFlex_1.min.css?v=10" id="homeCssLink" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<style id="pagestyle" type="text/css">
+    
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-30, .size-30, .size-30 > font { font-size: 30px !important; }.font-size-55, .size-55, .size-55 > font { font-size: 55px !important; }.font-size-22, .size-22, .size-22 > font { font-size: 22px !important; }.font-size-18, .size-18, .size-18 > font { font-size: 18px !important; }.font-size-36, .size-36, .size-36 > font { font-size: 36px !important; }.font-size-20, .size-20, .size-20 > font { font-size: 20px !important; }.font-size-50, .size-50, .size-50 > font { font-size: 50px !important; }.font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script>
+    window.customWidgetsFunctions["1f5975986930429f819d4cd2154b5c4a~24"] = function (element, data, api) {
+        null
+    };
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5752";
+    var build = "2025-08-28T13_05_53";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-08-28T13_05_53";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5752';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5752';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.monolith.personalization.skipRuleConditionsForPreview.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["editor.classicHybrid.photogallery.fix"] =true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["editor.link.on.container"] =true;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+    rtFlags["flex.megaMenu.a11y"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5752/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5752/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '8f142869'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: 8f142869 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+</body>
+</html>
