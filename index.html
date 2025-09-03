@@ -1508,14 +1508,14 @@ requestAnimationFrame(() => {
 
 <!-- VAPI Ultra-Luxury Sophie Assistant Widget CSS -->
 <style>
-/* VAPI WIDGET CSS - COLD LAVA BRANDING */
+/* VAPI WIDGET CSS - GREEN STAR SOLAR BRANDING */
 :root {
-    --vapi-primary-color: #02bbd4; /* Cold Lava Blue */
+    --vapi-primary-color: #68ccd1; /* Green Star Solar Teal */
     --vapi-accent-color: #ffffff;
-    --vapi-secondary-color: #ffe14d; /* Cold Lava Yellow */
-    --vapi-dark-bg: #0a0a33; /* Cold Lava Dark */
-    --vapi-dark: rgba(10, 10, 33, 0.95);
-    --vapi-glass-border: rgba(2, 187, 212, 0.3);
+    --vapi-secondary-color: rgba(7,133,2,1); /* Green Star Solar Green */
+    --vapi-dark-bg: rgba(0,55,55,1); /* Green Star Solar Dark Teal */
+    --vapi-dark: rgba(21,83,83,1);
+    --vapi-glass-border: rgba(104, 204, 209, 0.3);
 }
 
 /* Hide various Vapi support buttons */
@@ -1530,7 +1530,7 @@ button[class*="vapi-btn"] {
     bottom: 30px;
     right: 30px;
     z-index: 10000;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Poppins, "Poppins Fallback", sans-serif;
 }
 
 #vapi-hybrid-widget *,
@@ -1570,7 +1570,7 @@ button[class*="vapi-btn"] {
     content: '' !important;
     position: absolute !important;
     inset: -2px !important;
-    background: conic-gradient(from 0deg, rgba(2, 187, 212, 0.8), rgba(74, 144, 226, 0.6), rgba(2, 187, 212, 0.8)) !important;
+    background: conic-gradient(from 0deg, rgba(104, 204, 209, 0.8), rgba(7, 133, 2, 0.6), rgba(104, 204, 209, 0.8)) !important;
     border-radius: 50% !important;
     opacity: 0 !important;
     transition: opacity 0.5s ease !important;
@@ -1581,7 +1581,7 @@ button[class*="vapi-btn"] {
     content: '' !important;
     position: absolute !important;
     inset: 0 !important;
-    background: radial-gradient(circle at 30% 20%, rgba(2, 187, 212, 0.15), transparent 60%) !important;
+    background: radial-gradient(circle at 30% 20%, rgba(104, 204, 209, 0.15), transparent 60%) !important;
     border-radius: 50% !important;
     opacity: 0.9 !important;
     transition: opacity 0.4s ease !important;
@@ -1592,8 +1592,8 @@ button[class*="vapi-btn"] {
     height: 42px !important;
     border-radius: 8px !important;
     filter: 
-      drop-shadow(0 0 12px rgba(2, 187, 212, 0.4))
-      drop-shadow(0 0 24px rgba(2, 187, 212, 0.2))
+      drop-shadow(0 0 12px rgba(104, 204, 209, 0.4))
+      drop-shadow(0 0 24px rgba(104, 204, 209, 0.2))
       brightness(1.1) !important;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
 }
@@ -1601,11 +1601,11 @@ button[class*="vapi-btn"] {
 #vapi-chat-button:hover {
     transform: translateY(-12px) scale(1.08) !important;
     box-shadow: 
-      0 40px 80px rgba(2, 187, 212, 0.35),
+      0 40px 80px rgba(104, 204, 209, 0.35),
       0 20px 40px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.25),
-      0 0 80px rgba(2, 187, 212, 0.3),
-      0 0 160px rgba(2, 187, 212, 0.15) !important;
+      0 0 80px rgba(104, 204, 209, 0.3),
+      0 0 160px rgba(104, 204, 209, 0.15) !important;
 }
 
 #vapi-chat-button:hover::before {
@@ -1619,8 +1619,8 @@ button[class*="vapi-btn"] {
 #vapi-chat-button:hover img {
     transform: scale(1.05) !important;
     filter: 
-      drop-shadow(0 0 20px rgba(2, 187, 212, 0.6))
-      drop-shadow(0 0 40px rgba(2, 187, 212, 0.3))
+      drop-shadow(0 0 20px rgba(104, 204, 209, 0.6))
+      drop-shadow(0 0 40px rgba(104, 204, 209, 0.3))
       brightness(1.2) !important;
 }
 
@@ -1643,8 +1643,8 @@ button[class*="vapi-btn"] {
       0 50px 100px rgba(0, 0, 0, 0.4),
       0 25px 50px rgba(0, 0, 0, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.1),
-      0 0 0 1px rgba(2, 187, 212, 0.15),
-      0 0 80px rgba(2, 187, 212, 0.1) !important;
+      0 0 0 1px rgba(104, 204, 209, 0.15),
+      0 0 80px rgba(104, 204, 209, 0.1) !important;
     display: none !important;
     flex-direction: column !important;
     overflow: hidden !important;
@@ -1656,8 +1656,8 @@ button[class*="vapi-btn"] {
     position: absolute !important;
     inset: 0 !important;
     background: 
-      radial-gradient(circle at 15% 15%, rgba(2, 187, 212, 0.12), transparent 50%),
-      radial-gradient(circle at 85% 85%, rgba(74, 144, 226, 0.08), transparent 50%) !important;
+      radial-gradient(circle at 15% 15%, rgba(104, 204, 209, 0.12), transparent 50%),
+      radial-gradient(circle at 85% 85%, rgba(7, 133, 2, 0.08), transparent 50%) !important;
     opacity: 0.8 !important;
     pointer-events: none !important;
 }
@@ -1669,7 +1669,7 @@ button[class*="vapi-btn"] {
     left: 0 !important;
     right: 0 !important;
     height: 1px !important;
-    background: linear-gradient(90deg, transparent, rgba(2, 187, 212, 0.5), transparent) !important;
+    background: linear-gradient(90deg, transparent, rgba(104, 204, 209, 0.5), transparent) !important;
     opacity: 0.6 !important;
 }
 
@@ -1697,14 +1697,14 @@ button[class*="vapi-btn"] {
         0 50px 100px rgba(0, 0, 0, 0.4),
         0 25px 50px rgba(0, 0, 0, 0.25),
         inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 0 0 1px rgba(2, 187, 212, 0.15),
-        0 0 80px rgba(2, 187, 212, 0.1);
+        0 0 0 1px rgba(104, 204, 209, 0.15),
+        0 0 80px rgba(104, 204, 209, 0.1);
     }
 }
 
 #vapi-chat-header {
     padding: 25px 30px !important;
-    background: linear-gradient(135deg, rgba(2, 187, 212, 0.95), rgba(74, 144, 226, 0.85)) !important;
+    background: linear-gradient(135deg, rgba(104, 204, 209, 0.95), rgba(7, 133, 2, 0.85)) !important;
     color: var(--vapi-accent-color) !important;
     display: flex !important;
     justify-content: space-between !important;
@@ -1757,11 +1757,11 @@ button[class*="vapi-btn"] {
 }
 
 .vapi-message-user {
-    background: linear-gradient(135deg, rgba(2, 187, 212, 0.9), rgba(74, 144, 226, 0.8)) !important;
+    background: linear-gradient(135deg, rgba(104, 204, 209, 0.9), rgba(7, 133, 2, 0.8)) !important;
     color: var(--vapi-accent-color) !important;
     margin-left: auto !important;
     border-bottom-right-radius: 8px !important;
-    box-shadow: 0 4px 12px rgba(2, 187, 212, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(104, 204, 209, 0.3) !important;
 }
 
 .vapi-message-assistant {
@@ -1883,7 +1883,7 @@ button[class*="vapi-btn"] {
 
 #vapi-message-input:focus {
     border-color: var(--vapi-primary-color) !important;
-    box-shadow: 0 0 0 2px rgba(2, 187, 212, 0.3) !important;
+    box-shadow: 0 0 0 2px rgba(104, 204, 209, 0.3) !important;
     background: rgba(255, 255, 255, 0.12) !important;
 }
 
@@ -1895,19 +1895,19 @@ button[class*="vapi-btn"] {
     padding: 16px 24px !important;
     border: none !important;
     border-radius: 25px !important;
-    background: linear-gradient(135deg, var(--vapi-primary-color), rgba(74, 144, 226, 0.9)) !important;
+    background: linear-gradient(135deg, var(--vapi-primary-color), var(--vapi-secondary-color)) !important;
     color: var(--vapi-accent-color) !important;
     font-size: 15px !important;
     font-weight: 600 !important;
     cursor: pointer !important;
     transition: all 0.3s ease !important;
-    box-shadow: 0 4px 15px rgba(2, 187, 212, 0.3) !important;
+    box-shadow: 0 4px 15px rgba(104, 204, 209, 0.3) !important;
 }
 
 #vapi-send-button:hover {
-    background: linear-gradient(135deg, rgba(74, 144, 226, 0.9), var(--vapi-primary-color)) !important;
+    background: linear-gradient(135deg, var(--vapi-secondary-color), var(--vapi-primary-color)) !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 6px 20px rgba(2, 187, 212, 0.4) !important;
+    box-shadow: 0 6px 20px rgba(104, 204, 209, 0.4) !important;
 }
 
 #vapi-voice-controls {
@@ -1922,19 +1922,19 @@ button[class*="vapi-btn"] {
     height: 85px !important;
     border: 2px solid var(--vapi-primary-color) !important;
     border-radius: 50% !important;
-    background: linear-gradient(135deg, var(--vapi-primary-color), rgba(74, 144, 226, 0.8)) !important;
+    background: linear-gradient(135deg, var(--vapi-primary-color), var(--vapi-secondary-color)) !important;
     color: var(--vapi-accent-color) !important;
     font-size: 16px !important;
     font-weight: 600 !important;
     cursor: pointer !important;
     transition: all 0.4s ease !important;
-    box-shadow: 0 8px 25px rgba(2, 187, 212, 0.3) !important;
+    box-shadow: 0 8px 25px rgba(104, 204, 209, 0.3) !important;
     backdrop-filter: blur(10px) !important;
 }
 
 #vapi-voice-button:hover {
     transform: scale(1.05) !important;
-    box-shadow: 0 12px 35px rgba(2, 187, 212, 0.5) !important;
+    box-shadow: 0 12px 35px rgba(104, 204, 209, 0.5) !important;
 }
 
 #vapi-voice-button.connecting {
@@ -1998,8 +1998,8 @@ button[class*="vapi-btn"] {
   <!-- Ultra-Premium Logo Button with Glow -->
   <button id="vapi-chat-button" aria-label="Talk to Sophie">
     <img 
-      src="https://cdn.shopify.com/s/files/1/0951/6141/8067/files/LAVA_1.png?v=1753207208" 
-      alt="Cold Lava AI"
+      src="https://cdn.shopify.com/s/files/1/0951/6141/8067/files/0x0_2_1.png?v=1756897984" 
+      alt="Green Star Solar"
       loading="eager"
       style="object-fit: contain;"
     />
@@ -2009,14 +2009,14 @@ button[class*="vapi-btn"] {
   <div id="vapi-chat-panel" role="dialog" aria-labelledby="vapi-chat-title" class="vapi-text-mode">
     <!-- Elegant Header -->
     <div id="vapi-chat-header">
-      <h3 id="vapi-chat-title">Sophie • AI Assistant</h3>
+      <h3 id="vapi-chat-title">Sophie • Green Star Solar Assistant</h3>
       <button id="vapi-close-button" aria-label="Close">×</button>
     </div>
 
     <!-- Messages -->
     <div id="vapi-text-messages" role="log" aria-live="polite">
       <div class="vapi-message vapi-message-assistant">
-        Hi! I'm Sophie, your Cold Lava AI assistant. I'm here to help you discover how our AI automation can transform your business. What would you like to know?
+        Hi! I'm Sophie, your Green Star Solar assistant. I'm here to help you discover how solar energy can transform your home or business. What would you like to know about our solar solutions?
       </div>
     </div>
 
@@ -2035,7 +2035,7 @@ button[class*="vapi-btn"] {
         <input
           id="vapi-message-input"
           type="text"
-          placeholder="Ask Sophie anything..."
+          placeholder="Ask Sophie about solar energy..."
           aria-label="Message to Sophie"
           autocomplete="off"
         >
