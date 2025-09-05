@@ -213,6 +213,198 @@ import { VapiWidgetComponent } from './vapi-widget.component';
 
 ---
 
+### 🎯 Framer ⭐ **RECOMMENDED FOR YOUR DEPLOYMENT**
+
+Framer is perfect for this widget! Here's the step-by-step guide:
+
+#### **Method A: Custom Code Component (Recommended)**
+
+1. **Add Custom Code Component**:
+   - In Framer, drag a **Custom Code** component onto your page
+   - Or use **Insert** → **Custom Code**
+
+2. **Insert Widget Code**:
+   ```html
+   <!-- Paste this exact code in the Custom Code component -->
+   <div id="framer-vapi-widget">
+   <!-- Copy entire contents of widget-secure.html here -->
+   </div>
+   
+   <script>
+   // Framer-specific initialization
+   if (typeof document !== 'undefined') {
+     // Ensure widget initializes after Framer loads
+     setTimeout(() => {
+       if (document.readyState === 'complete') {
+         // Widget will auto-initialize
+       }
+     }, 1000);
+   }
+   </script>
+   ```
+
+3. **Configure Settings**:
+   - Set component **Width**: `Auto` or `100%`
+   - Set component **Height**: `Auto` or `100px`
+   - **Position**: `Fixed` or `Absolute` (for floating widget)
+   - **Z-index**: `10000` (ensure it appears above other elements)
+
+#### **Method B: Site-Wide Custom Code (Global)**
+
+1. **Site Settings**:
+   - Go to **Site Settings** → **General** → **Custom Code**
+
+2. **Add to End of Body**:
+   - Paste the complete widget code in **End of `<body>` tag**
+   - This makes the widget available on all pages
+
+#### **Method C: Page-Specific Custom Code**
+
+1. **Page Settings**:
+   - Select your page
+   - Go to **Page Settings** → **Custom Code**
+
+2. **Add Widget Code**:
+   - Paste in **End of `<body>` tag** section
+   - Widget will only appear on this specific page
+
+#### **🔧 Framer-Specific Optimizations**
+
+Add this CSS to ensure perfect Framer compatibility:
+
+```css
+/* Add this to your widget CSS for Framer optimization */
+#vapi-hybrid-widget {
+  /* Ensure widget appears above Framer elements */
+  z-index: 999999 !important;
+  
+  /* Prevent conflicts with Framer's responsive system */
+  position: fixed !important;
+  pointer-events: auto !important;
+  
+  /* Ensure proper stacking */
+  isolation: isolate !important;
+}
+
+/* Prevent Framer animations from affecting widget */
+#vapi-hybrid-widget * {
+  animation-fill-mode: none !important;
+  will-change: auto !important;
+}
+
+/* Mobile responsive fixes for Framer */
+@media (max-width: 768px) {
+  #vapi-hybrid-widget {
+    bottom: 20px !important;
+    right: 20px !important;
+  }
+}
+```
+
+#### **⚡ Framer Quick Start (Copy-Paste Ready)**
+
+For immediate deployment, use this **complete code block** in any Framer Custom Code component:
+
+```html
+<!-- 🚀 FRAMER-OPTIMIZED VAPI WIDGET - Ready to use! -->
+<style>
+/* Framer-specific widget styles */
+#framer-vapi-widget #vapi-hybrid-widget {
+  position: fixed !important;
+  bottom: 30px !important;
+  right: 30px !important;
+  z-index: 999999 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  pointer-events: auto !important;
+  isolation: isolate !important;
+}
+
+/* Ensure compatibility with Framer's system */
+#framer-vapi-widget * {
+  box-sizing: border-box !important;
+  animation-fill-mode: none !important;
+}
+</style>
+
+<!-- Copy the ENTIRE contents of widget-secure.html here -->
+<!-- This ensures maximum security and Framer compatibility -->
+
+<script>
+// Framer-optimized initialization
+(function() {
+  // Wait for Framer to fully load
+  const initWidget = () => {
+    if (typeof document !== 'undefined' && document.readyState === 'complete') {
+      // Widget auto-initializes
+      console.log('✅ VAPI Widget loaded successfully in Framer');
+    } else {
+      setTimeout(initWidget, 500);
+    }
+  };
+  
+  if (typeof window !== 'undefined') {
+    initWidget();
+  }
+})();
+</script>
+```
+
+#### **🔒 Security Configuration for Framer**
+
+If using the secure version (recommended):
+
+1. **Deploy Backend Server**:
+   ```bash
+   cd backend
+   npm install
+   npm run start:secure
+   ```
+
+2. **Configure CORS for Framer**:
+   ```env
+   # In backend/.env
+   CORS_ORIGINS=https://your-framer-site.framer.website,https://your-custom-domain.com
+   ```
+
+#### **🎨 Framer Design Integration**
+
+To match your Framer site's design:
+
+```css
+/* Customize colors to match your Framer theme */
+:root {
+  --vapi-primary-color: #your-brand-color;
+  --vapi-secondary-color: #your-accent-color;
+  --vapi-accent-color: #ffffff;
+}
+
+/* Position adjustments for Framer layouts */
+#vapi-hybrid-widget {
+  /* Adjust position based on your Framer layout */
+  bottom: 80px; /* If you have a sticky footer */
+  right: 20px;  /* Adjust for sidebars */
+}
+```
+
+#### **📱 Mobile Testing in Framer**
+
+1. Use Framer's **Preview** mode to test on mobile
+2. Check widget positioning and responsiveness  
+3. Ensure touch interactions work properly
+4. Test voice functionality on mobile devices
+
+#### **✅ Framer Deployment Checklist**
+
+- [ ] Widget code added to Custom Code component
+- [ ] Z-index set to 999999 for proper layering
+- [ ] Backend deployed and CORS configured
+- [ ] Mobile responsiveness tested in Framer Preview
+- [ ] Voice functionality tested (requires HTTPS)
+- [ ] Security features validated
+- [ ] Published to live Framer site
+
+---
+
 ## 🎨 Customization Options
 
 ### Change Colors

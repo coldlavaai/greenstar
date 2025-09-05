@@ -28,6 +28,7 @@ greenstar/
 │   ├── widget-install.md     # Complete installation guide  
 │   ├── widget.html           # Standard widget (requires backend)
 │   ├── widget-secure.html    # 🔒 HARDENED widget (production ready)
+│   ├── widget-framer.html    # 🎯 FRAMER-OPTIMIZED widget (recommended)
 │   ├── widget.css            # Widget styles (extracted)
 │   └── widget.js             # Widget functionality (extracted)
 ├── backend/                  # 🔒 SECURE backend (REQUIRED for production)
@@ -38,6 +39,7 @@ greenstar/
 │   └── .env.example          # Environment variables template
 ├── SECURITY.md               # Security implementation details
 ├── SECURITY-HARDENED.md      # 🔒 PRODUCTION security guide
+├── FRAMER-DEPLOY.md          # 🎯 FRAMER deployment guide
 └── README.md                 # This file
 ```
 
@@ -66,23 +68,36 @@ npm run start:secure
 
 ## 🚀 Quick Start
 
+### 🎯 **FRAMER DEPLOYMENT (Recommended)**
+```bash
+# 5-minute setup for Framer sites:
+# 1. Add Custom Code component to your Framer page
+# 2. Copy entire contents of widget/widget-framer.html
+# 3. Paste into Custom Code component
+# 4. Set component height to 100px, width to Auto
+# 5. Publish your site ✅
+```
+**📖 Full Guide**: [FRAMER-DEPLOY.md](./FRAMER-DEPLOY.md)
+
 ### Option 1: Maximum Security (Production)
 1. **Deploy Backend**: Follow [SECURITY-HARDENED.md](./SECURITY-HARDENED.md) guide
 2. **Install Widget**: Use `widget-secure.html` for tamper-proof deployment
 3. **Configure Security**: Set up rate limiting, CORS, and monitoring
 
-### Option 2: Development Testing
-See [widget/widget-install.md](./widget/widget-install.md) for platform-specific instructions.
+### Option 2: Other Platforms
+See [widget/widget-install.md](./widget/widget-install.md) for WordPress, Shopify, React, Vue, etc.
 
 ### Option 3: View Live Demo
 Visit the [live demo](https://coldlavaai.github.io/greenstar/) to see the widget in action.
 
 ## 🔧 Platform Support
 
+✅ **Framer** (🎯 OPTIMIZED - Perfect integration!)  
 ✅ **Static Sites** (GitHub Pages, Netlify, Vercel)  
 ✅ **WordPress** (Custom HTML or plugin)  
 ✅ **Shopify** (Theme customization)  
 ✅ **React/Vue/Angular** (Component integration)  
+✅ **Webflow, Squarespace, Wix** (Custom code blocks)  
 ✅ **Custom Applications** (Any HTML/CSS/JS site)  
 ✅ **CMS Platforms** (Drupal, Joomla, etc.)  
 
