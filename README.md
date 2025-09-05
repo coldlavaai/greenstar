@@ -1,6 +1,6 @@
 # 🌟 Green Star Solar VAPI Chat Widget
 
-A professional, production-ready AI chat widget powered by VAPI, designed for seamless integration into any website. Features both voice and text chat capabilities with a premium UI/UX.
+A professional, **production-ready** AI chat widget powered by VAPI, designed for seamless integration into any website. Features both voice and text chat capabilities with a premium UI/UX and **enterprise-grade security**.
 
 ## ✨ Features
 
@@ -8,9 +8,12 @@ A professional, production-ready AI chat widget powered by VAPI, designed for se
 - **💬 Text Chat** - Traditional text-based chat interface  
 - **📱 Mobile Responsive** - Works perfectly on all devices
 - **🎨 Premium Design** - Professional UI with smooth animations
-- **🔒 Secure** - Smart API strategy with backend proxy support
+- **🔒 Enterprise Security** - Hardened against XSS, tampering, and abuse
+- **🛡️ Zero Credential Exposure** - No API keys in frontend code
+- **🚦 Rate Limiting** - Built-in DOS protection and abuse prevention
 - **🚀 Universal Compatibility** - Works on any website/hosting platform
 - **⚡ Easy Integration** - Simple copy-paste installation
+- **📊 Security Monitoring** - Real-time attack detection and logging
 
 ## 🏠 Demo
 
@@ -20,25 +23,58 @@ A professional, production-ready AI chat widget powered by VAPI, designed for se
 
 ```
 greenstar/
-├── index.html              # Demo site with full implementation
-├── widget/                 # Widget installation files
-│   ├── widget-install.md   # Complete installation guide
-│   ├── widget.html         # Widget HTML structure
-│   ├── widget.css          # Widget styles (extracted)
-│   └── widget.js           # Widget functionality (extracted)
-├── backend/                # Optional secure backend
-│   ├── vapi-proxy.js       # Node.js proxy server
-│   ├── package.json        # Backend dependencies
-│   └── .env.example        # Environment variables template
-└── README.md               # This file
+├── index.html                # Demo site with full implementation
+├── widget/                   # Widget installation files
+│   ├── widget-install.md     # Complete installation guide  
+│   ├── widget.html           # Standard widget (requires backend)
+│   ├── widget-secure.html    # 🔒 HARDENED widget (production ready)
+│   ├── widget.css            # Widget styles (extracted)
+│   └── widget.js             # Widget functionality (extracted)
+├── backend/                  # 🔒 SECURE backend (REQUIRED for production)
+│   ├── vapi-proxy.js         # Basic Node.js proxy server
+│   ├── vapi-proxy-secure.js  # 🔒 HARDENED proxy server
+│   ├── test-security.js      # Security testing suite
+│   ├── package.json          # Backend dependencies
+│   └── .env.example          # Environment variables template
+├── SECURITY.md               # Security implementation details
+├── SECURITY-HARDENED.md      # 🔒 PRODUCTION security guide
+└── README.md                 # This file
 ```
+
+## 🔒 SECURITY FIRST
+
+**⚠️ IMPORTANT**: For production deployments, use the **hardened security version**:
+
+### 🛡️ **PRODUCTION (Secure)**
+```bash
+# 1. Deploy secure backend
+cd backend && npm install
+cp .env.example .env  # Add your API keys
+npm run start:secure
+
+# 2. Use hardened widget
+# Copy contents of widget/widget-secure.html to your site
+```
+
+### ⚡ **DEVELOPMENT (Quick Test)**
+```bash  
+# Use widget/widget.html for development only
+# See widget/widget-install.md for platform instructions
+```
+
+**📖 Full Security Guide**: [SECURITY-HARDENED.md](./SECURITY-HARDENED.md)
 
 ## 🚀 Quick Start
 
-### Option 1: Copy Full Widget (Recommended)
+### Option 1: Maximum Security (Production)
+1. **Deploy Backend**: Follow [SECURITY-HARDENED.md](./SECURITY-HARDENED.md) guide
+2. **Install Widget**: Use `widget-secure.html` for tamper-proof deployment
+3. **Configure Security**: Set up rate limiting, CORS, and monitoring
+
+### Option 2: Development Testing
 See [widget/widget-install.md](./widget/widget-install.md) for platform-specific instructions.
 
-### Option 2: View Live Demo
+### Option 3: View Live Demo
 Visit the [live demo](https://coldlavaai.github.io/greenstar/) to see the widget in action.
 
 ## 🔧 Platform Support
