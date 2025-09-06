@@ -1511,43 +1511,58 @@ requestAnimationFrame(() => {
 <!--  Site Wide Html Markup -->
 <!--  Site Wide Html Markup -->
 
-<!-- COMPREHENSIVE MOBILE OPTIMIZATION CSS -->
+<!-- ULTRA MOBILE OPTIMIZATION - COMPLETE REDESIGN -->
 <style>
-/* ========================================
-   COMPREHENSIVE MOBILE OPTIMIZATION
-   FOR GREEN STAR SOLAR WEBSITE
-======================================== */
+/* ==============================================
+   ULTRA MOBILE-FIRST RESPONSIVE DESIGN
+   COMPLETE SITE TRANSFORMATION
+============================================== */
 
-/* BASE MOBILE OPTIMIZATIONS */
-@media (max-width: 767px) {
-    /* Fundamental mobile fixes */
-    html {
-        font-size: 14px !important;
-        -webkit-text-size-adjust: 100% !important;
-        -ms-text-size-adjust: 100% !important;
-    }
-    
-    body {
-        font-size: 14px !important;
-        line-height: 1.6 !important;
-        overflow-x: hidden !important;
-        -webkit-overflow-scrolling: touch !important;
-    }
-    
-    /* Layout containers */
-    .dmInner {
-        min-width: 100% !important;
+/* MOBILE FIRST - DEFAULT STYLES (320px+) */
+/* Reset conflicting styles */
+.dmInner {
+    min-width: 320px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+html {
+    -webkit-text-size-adjust: none !important;
+    -ms-text-size-adjust: none !important;
+    text-size-adjust: none !important;
+    font-size: 16px !important;
+}
+
+body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* MOBILE LAYOUT SYSTEM */
+@media screen and (max-width: 1024px) {
+    /* Force all columns to stack on mobile/tablet */
+    .dmRespCol {
+        width: 100% !important;
         max-width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        overflow-x: hidden !important;
+        float: none !important;
+        display: block !important;
+        margin: 0 0 15px 0 !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
     }
     
     .dmRespRowsWrapper {
         width: 100% !important;
         max-width: 100% !important;
-        padding: 0 15px !important;
-        margin: 0 auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
     .dmRespRow {
@@ -1555,60 +1570,229 @@ requestAnimationFrame(() => {
         max-width: 100% !important;
         margin: 0 !important;
         padding: 15px 0 !important;
-    }
-    
-    .dmRespCol {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 0 20px 0 !important;
-        padding: 0 !important;
-        float: none !important;
         display: block !important;
     }
-    
-    /* Header optimizations */
+
+    /* HEADER MOBILE REDESIGN */
     .dmHeader {
         width: 100% !important;
-        padding: 15px !important;
+        padding: 20px 15px !important;
         text-align: center !important;
+        background: #68ccd1 !important;
+        box-sizing: border-box !important;
     }
     
-    /* Navigation mobile fixes */
+    /* NAVIGATION MOBILE TRANSFORMATION */
     .main-navigation.unifiednav {
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 10px !important;
+        width: 100% !important;
+        display: block !important;
+        text-align: center !important;
+        padding: 15px 0 !important;
+        background: rgba(255,255,255,0.1) !important;
+        border-radius: 10px !important;
+        margin: 10px 0 !important;
     }
     
     .main-navigation.unifiednav .unifiednav__container {
-        flex-direction: column !important;
         width: 100% !important;
-        gap: 5px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: center !important;
     }
     
     .main-navigation.unifiednav .unifiednav__item-wrap {
-        width: 100% !important;
-        justify-content: center !important;
+        width: 90% !important;
+        max-width: 300px !important;
+        display: block !important;
     }
     
     .main-navigation.unifiednav .unifiednav__item {
         width: 100% !important;
+        display: block !important;
         text-align: center !important;
-        padding: 12px 20px !important;
-        font-size: 16px !important;
-        min-height: 48px !important; /* Touch-friendly */
+        padding: 15px 20px !important;
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        background: rgba(255,255,255,0.9) !important;
+        border-radius: 8px !important;
+        margin: 0 !important;
+        color: #333 !important;
+        text-decoration: none !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        transition: all 0.3s ease !important;
+        min-height: 50px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
     }
     
-    /* Typography mobile fixes */
+    .main-navigation.unifiednav .unifiednav__item:hover,
+    .main-navigation.unifiednav .unifiednav__item:active {
+        background: #68ccd1 !important;
+        color: white !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+    }
+
+    /* TYPOGRAPHY MOBILE OPTIMIZATION */
     h1, h2, h3, h4, h5, h6 {
-        font-size: calc(100% + 2px) !important;
-        line-height: 1.4 !important;
-        margin: 15px 0 !important;
         text-align: center !important;
+        margin: 20px 0 15px 0 !important;
+        padding: 0 15px !important;
+        line-height: 1.3 !important;
         word-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    
+    h1 {
+        font-size: 32px !important;
+        font-weight: 700 !important;
+    }
+    
+    h2 {
+        font-size: 28px !important;
+        font-weight: 600 !important;
+    }
+    
+    h3 {
+        font-size: 24px !important;
+        font-weight: 600 !important;
+    }
+    
+    h4 {
+        font-size: 20px !important;
+        font-weight: 500 !important;
+    }
+    
+    .dmNewParagraph {
+        padding: 15px 20px !important;
+        margin: 15px 0 !important;
+        font-size: 18px !important;
+        line-height: 1.6 !important;
+        text-align: left !important;
+        box-sizing: border-box !important;
+    }
+
+    /* BUTTON MOBILE TRANSFORMATION */
+    .dmButtonLink,
+    .dmWidget.flexButton,
+    button,
+    a[class*="dmButton"] {
+        width: 90% !important;
+        max-width: 320px !important;
+        min-height: 56px !important;
+        padding: 18px 24px !important;
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        border-radius: 12px !important;
+        margin: 20px auto !important;
+        display: block !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        background: linear-gradient(135deg, #68ccd1, #5bb5ba) !important;
+        color: white !important;
+        box-shadow: 0 4px 15px rgba(104, 204, 209, 0.3) !important;
+        transition: all 0.3s ease !important;
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: transparent !important;
+        cursor: pointer !important;
+    }
+    
+    .dmButtonLink:hover,
+    .dmWidget.flexButton:hover,
+    button:hover,
+    a[class*="dmButton"]:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 25px rgba(104, 204, 209, 0.4) !important;
+        background: linear-gradient(135deg, #5bb5ba, #4ea5aa) !important;
+    }
+    
+    .dmButtonLink:active,
+    .dmWidget.flexButton:active,
+    button:active,
+    a[class*="dmButton"]:active {
+        transform: translateY(-1px) !important;
+        box-shadow: 0 3px 10px rgba(104, 204, 209, 0.3) !important;
+    }
+
+    /* FORM MOBILE OPTIMIZATION */
+    .dmform {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px !important;
+        margin: 20px 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .dmforminput input,
+    .dmforminput textarea,
+    .dmforminput select {
+        width: 100% !important;
+        padding: 18px 16px !important;
+        font-size: 18px !important;
+        border-radius: 10px !important;
+        border: 2px solid #ddd !important;
+        margin: 10px 0 !important;
+        box-sizing: border-box !important;
+        -webkit-appearance: none !important;
+        background: white !important;
+        color: #333 !important;
+        transition: border-color 0.3s ease !important;
+    }
+    
+    .dmforminput input:focus,
+    .dmforminput textarea:focus,
+    .dmforminput select:focus {
+        border-color: #68ccd1 !important;
+        outline: none !important;
+        box-shadow: 0 0 0 3px rgba(104, 204, 209, 0.1) !important;
+    }
+
+    /* IMAGE MOBILE OPTIMIZATION */
+    .imageWidget,
+    .imageWidget img,
+    img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 15px 0 !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+    }
+
+    /* CONTENT SECTIONS MOBILE */
+    #ABOUTUS,
+    #Systems,
+    .dmRespRow[data-anchor] {
+        padding: 40px 20px !important;
+        margin: 30px 0 !important;
+        background: rgba(255,255,255,0.95) !important;
+        border-radius: 15px !important;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08) !important;
+    }
+
+    /* FOOTER MOBILE OPTIMIZATION */
+    .dmFooter {
+        padding: 40px 20px !important;
+        text-align: center !important;
+        background: #f8f9fa !important;
+    }
+    
+    .dmFooter .dmRespCol {
+        margin-bottom: 30px !important;
+    }
+}
+
+/* SMALL MOBILE SPECIFIC (480px and below) */
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 14px !important;
+    }
+    
+    .dmRespCol {
+        padding: 0 5px !important;
     }
     
     h1 { font-size: 28px !important; }
@@ -1617,251 +1801,97 @@ requestAnimationFrame(() => {
     h4 { font-size: 18px !important; }
     
     .dmNewParagraph {
-        padding: 10px 15px !important;
-        margin: 10px 0 !important;
+        padding: 12px 15px !important;
         font-size: 16px !important;
-        line-height: 1.6 !important;
-        text-align: left !important;
     }
     
-    /* Button optimizations for touch */
+    .main-navigation.unifiednav .unifiednav__item {
+        padding: 12px 16px !important;
+        font-size: 16px !important;
+        min-height: 48px !important;
+    }
+    
     .dmButtonLink,
     .dmWidget.flexButton,
     button,
-    input[type="submit"],
-    input[type="button"] {
-        min-height: 48px !important;
-        padding: 12px 20px !important;
+    a[class*="dmButton"] {
+        min-height: 50px !important;
+        padding: 15px 20px !important;
         font-size: 16px !important;
-        border-radius: 8px !important;
-        margin: 10px auto !important;
-        display: block !important;
-        width: auto !important;
-        max-width: 280px !important;
-        text-align: center !important;
-        touch-action: manipulation !important;
-        -webkit-tap-highlight-color: rgba(0,0,0,0.1) !important;
-    }
-    
-    /* Form optimizations */
-    .dmform {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 15px !important;
-        margin: 20px 0 !important;
-    }
-    
-    .dmforminput input,
-    .dmforminput textarea,
-    .dmforminput select {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 12px 15px !important;
-        font-size: 16px !important; /* Prevents zoom on iOS */
-        border-radius: 8px !important;
-        margin: 8px 0 !important;
-        -webkit-appearance: none !important;
-        box-sizing: border-box !important;
-    }
-    
-    /* Image optimizations */
-    .imageWidget,
-    .imageWidget img,
-    img {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        margin: 0 auto !important;
-        display: block !important;
-    }
-    
-    /* Content sections */
-    #ABOUTUS,
-    #Systems,
-    .dmRespRow[data-anchor] {
-        padding: 30px 15px !important;
-        margin: 20px 0 !important;
-    }
-    
-    /* Footer optimizations */
-    .dmFooter {
-        padding: 30px 15px !important;
-        text-align: center !important;
-    }
-    
-    .dmFooter .dmRespCol {
-        margin-bottom: 30px !important;
     }
 }
 
 /* TABLET OPTIMIZATION (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .dmRespRowsWrapper {
-        max-width: 100% !important;
-        padding: 0 30px !important;
-    }
-    
-    .dmRespRow {
-        padding: 20px 0 !important;
-    }
-    
+@media screen and (min-width: 768px) and (max-width: 1024px) {
     .dmRespCol {
-        margin-bottom: 25px !important;
+        padding: 0 15px !important;
     }
     
-    /* Navigation tablet fixes */
-    .main-navigation.unifiednav .unifiednav__item {
-        padding: 15px 25px !important;
-        font-size: 16px !important;
+    .main-navigation.unifiednav .unifiednav__container {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 12px !important;
     }
     
-    /* Button tablet optimization */
-    .dmButtonLink,
-    .dmWidget.flexButton {
-        min-height: 50px !important;
-        padding: 15px 25px !important;
-        font-size: 16px !important;
-    }
-}
-
-/* LARGE MOBILE DEVICES (480px - 767px) */
-@media (min-width: 480px) and (max-width: 767px) {
-    .dmRespRowsWrapper {
-        padding: 0 20px !important;
-    }
-    
-    .dmRespRow {
-        padding: 20px 0 !important;
-    }
-    
-    h1 { font-size: 32px !important; }
-    h2 { font-size: 28px !important; }
-    h3 { font-size: 24px !important; }
-    
-    .dmButtonLink,
-    .dmWidget.flexButton {
-        max-width: 320px !important;
-    }
-}
-
-/* SMALL MOBILE DEVICES (320px - 479px) */
-@media (max-width: 479px) {
-    .dmRespRowsWrapper {
-        padding: 0 10px !important;
-    }
-    
-    .dmRespRow {
-        padding: 15px 0 !important;
-    }
-    
-    h1 { font-size: 24px !important; }
-    h2 { font-size: 20px !important; }
-    h3 { font-size: 18px !important; }
-    
-    .dmNewParagraph {
-        padding: 8px 10px !important;
-        font-size: 14px !important;
-    }
-    
-    .main-navigation.unifiednav .unifiednav__item {
-        padding: 10px 15px !important;
-        font-size: 14px !important;
+    .main-navigation.unifiednav .unifiednav__item-wrap {
+        width: auto !important;
+        min-width: 150px !important;
     }
     
     .dmButtonLink,
-    .dmWidget.flexButton {
-        min-height: 44px !important;
-        padding: 10px 15px !important;
-        font-size: 14px !important;
-        max-width: 280px !important;
+    .dmWidget.flexButton,
+    button,
+    a[class*="dmButton"] {
+        width: auto !important;
+        min-width: 200px !important;
+        max-width: 300px !important;
     }
 }
 
-/* TOUCH DEVICE OPTIMIZATIONS */
-@media (pointer: coarse) {
-    /* All touch-friendly elements */
-    a, button, input, textarea, select, .dmButtonLink, .dmWidget {
-        min-height: 44px !important;
-        min-width: 44px !important;
-        touch-action: manipulation !important;
-        -webkit-tap-highlight-color: rgba(68, 204, 209, 0.3) !important;
+/* BROWSER SPECIFIC OPTIMIZATIONS */
+/* iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    input, textarea, select {
+        -webkit-appearance: none !important;
+        border-radius: 10px !important;
+    }
+    
+    .dmInner {
+        -webkit-overflow-scrolling: touch !important;
     }
 }
 
-/* HIGH DPI DISPLAY OPTIMIZATIONS */
+/* Chrome Mobile */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .dmInner {
+        will-change: scroll-position !important;
+    }
+}
+
+/* ACCESSIBILITY & PERFORMANCE */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High DPI displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-    /* Crisp rendering on retina displays */
     * {
         -webkit-font-smoothing: antialiased !important;
         -moz-osx-font-smoothing: grayscale !important;
     }
 }
 
-/* LANDSCAPE ORIENTATION FIXES */
-@media (max-width: 1024px) and (orientation: landscape) {
-    .dmHeader {
-        padding: 10px !important;
-    }
-    
-    .dmRespRow {
-        padding: 15px 0 !important;
-    }
-    
-    #ABOUTUS,
-    #Systems,
-    .dmRespRow[data-anchor] {
-        padding: 20px 15px !important;
-    }
-}
-
-/* iOS SAFARI SPECIFIC FIXES */
-@supports (-webkit-touch-callout: none) {
-    /* iOS Safari optimizations */
-    .dmInner {
-        -webkit-overflow-scrolling: touch !important;
-    }
-    
-    input, textarea, select {
-        -webkit-appearance: none !important;
-        border-radius: 0 !important;
-    }
-    
-    button, .dmButtonLink {
-        -webkit-appearance: none !important;
-        cursor: pointer !important;
-    }
-}
-
-/* ANDROID CHROME SPECIFIC FIXES */
-@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
-    /* Chrome Android optimizations */
-    .dmInner {
-        will-change: scroll-position !important;
-    }
-    
-    button, input, textarea, select {
-        font-size: 16px !important; /* Prevent zoom */
-    }
-}
-
-/* ACCESSIBILITY IMPROVEMENTS FOR MOBILE */
-@media (max-width: 767px) {
-    /* High contrast mode support */
-    @media (prefers-contrast: high) {
-        * {
-            border-color: #000000 !important;
-            color: #000000 !important;
-            background: #ffffff !important;
-        }
-    }
-    
-    /* Reduced motion support */
-    @media (prefers-reduced-motion: reduce) {
-        * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-        }
+/* TOUCH OPTIMIZATIONS */
+@media (pointer: coarse) {
+    a, button, input, textarea, select, .dmButtonLink, .dmWidget {
+        min-height: 48px !important;
+        min-width: 48px !important;
+        touch-action: manipulation !important;
     }
 }
 </style>
@@ -3016,6 +3046,451 @@ button[class*="vapi-btn"] {
     </div>
   </div>
 </div>
+
+<!-- ULTRA MOBILE WIDGET OPTIMIZATION -->
+<style>
+/* ================================================
+   SOPHIE WIDGET - ULTRA MOBILE OPTIMIZATION
+   COMPLETE MOBILE REDESIGN FOR PERFECT UX
+================================================ */
+
+/* MOBILE WIDGET CORE REDESIGN */
+@media screen and (max-width: 1024px) {
+    /* Widget container mobile optimization */
+    #vapi-hybrid-widget {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 999999 !important;
+        width: auto !important;
+        height: auto !important;
+        /* Performance optimizations */
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        transform: translate3d(0, 0, 0) !important;
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+        will-change: transform !important;
+    }
+    
+    /* Mobile tooltip */
+    #vapi-tooltip {
+        position: fixed !important;
+        bottom: 90px !important;
+        right: 25px !important;
+        background: rgba(0, 0, 0, 0.8) !important;
+        color: white !important;
+        padding: 12px 16px !important;
+        border-radius: 20px !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        white-space: nowrap !important;
+        pointer-events: none !important;
+        opacity: 0 !important;
+        transform: scale(0.8) translateY(10px) !important;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+    
+    #vapi-hybrid-widget:hover #vapi-tooltip {
+        opacity: 1 !important;
+        transform: scale(1) translateY(0) !important;
+    }
+    
+    /* Mobile chat button redesign */
+    #vapi-chat-button {
+        width: 70px !important;
+        height: 70px !important;
+        border-radius: 50% !important;
+        border: none !important;
+        background: linear-gradient(135deg, #68ccd1 0%, #5bb5ba 100%) !important;
+        box-shadow: 0 8px 30px rgba(104, 204, 209, 0.4) !important;
+        cursor: pointer !important;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        /* Touch optimizations */
+        -webkit-tap-highlight-color: transparent !important;
+        tap-highlight-color: transparent !important;
+        touch-action: manipulation !important;
+    }
+    
+    #vapi-chat-button:hover {
+        transform: scale(1.05) !important;
+        box-shadow: 0 12px 40px rgba(104, 204, 209, 0.5) !important;
+    }
+    
+    #vapi-chat-button:active {
+        transform: scale(0.98) !important;
+    }
+    
+    #vapi-chat-button img {
+        width: 42px !important;
+        height: 42px !important;
+        filter: brightness(0) invert(1) !important;
+    }
+    
+    /* Mobile chat panel complete redesign */
+    #vapi-chat-panel {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: calc(100vw - 40px) !important;
+        max-width: 400px !important;
+        height: 70vh !important;
+        max-height: 600px !important;
+        min-height: 400px !important;
+        
+        /* Modern mobile design */
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(20px) saturate(150%) !important;
+        -webkit-backdrop-filter: blur(20px) saturate(150%) !important;
+        border-radius: 24px !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        box-shadow: 
+            0 20px 60px rgba(0, 0, 0, 0.15),
+            0 8px 20px rgba(0, 0, 0, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+        
+        /* Layout and behavior */
+        display: none !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+        z-index: 999998 !important;
+        
+        /* Performance optimizations */
+        -webkit-transform: translateZ(0) !important;
+        transform: translateZ(0) !important;
+        -webkit-overflow-scrolling: touch !important;
+        contain: layout style paint !important;
+    }
+    
+    #vapi-chat-panel.open {
+        display: flex !important;
+        animation: mobileSlideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+    
+    @keyframes mobileSlideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(100px) scale(0.9);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    
+    /* Mobile chat header */
+    #vapi-chat-header {
+        padding: 20px 25px 15px 25px !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+        background: rgba(255, 255, 255, 0.5) !important;
+        backdrop-filter: blur(10px) !important;
+        flex-shrink: 0 !important;
+    }
+    
+    #vapi-chat-title {
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        color: #333 !important;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+    
+    #vapi-close-button {
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 50% !important;
+        background: rgba(0, 0, 0, 0.05) !important;
+        border: none !important;
+        font-size: 20px !important;
+        font-weight: 300 !important;
+        color: #666 !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    #vapi-close-button:hover {
+        background: rgba(0, 0, 0, 0.1) !important;
+        color: #333 !important;
+    }
+    
+    /* Mobile messages area */
+    #vapi-text-messages,
+    #vapi-voice-messages {
+        flex: 1 !important;
+        padding: 20px 25px !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        background: transparent !important;
+    }
+    
+    .vapi-message,
+    .vapi-voice-message {
+        margin: 15px 0 !important;
+        padding: 16px 20px !important;
+        border-radius: 18px !important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        max-width: 85% !important;
+        word-wrap: break-word !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+    }
+    
+    .vapi-message-user,
+    .vapi-voice-message-user {
+        background: linear-gradient(135deg, #68ccd1, #5bb5ba) !important;
+        color: white !important;
+        margin-left: auto !important;
+        border-bottom-right-radius: 6px !important;
+    }
+    
+    .vapi-message-assistant,
+    .vapi-voice-message-assistant {
+        background: rgba(248, 249, 250, 0.8) !important;
+        color: #333 !important;
+        border: 1px solid rgba(0, 0, 0, 0.04) !important;
+        margin-right: auto !important;
+        border-bottom-left-radius: 6px !important;
+    }
+    
+    .vapi-message-system {
+        background: rgba(255, 193, 7, 0.1) !important;
+        color: #856404 !important;
+        text-align: center !important;
+        margin: 10px auto !important;
+        font-style: italic !important;
+        font-size: 14px !important;
+    }
+    
+    /* Mobile input area complete redesign */
+    #vapi-input-area {
+        padding: 20px 25px 25px 25px !important;
+        background: rgba(255, 255, 255, 0.8) !important;
+        backdrop-filter: blur(10px) !important;
+        border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* Mobile mode toggle */
+    #vapi-mode-toggle {
+        display: flex !important;
+        gap: 8px !important;
+        margin-bottom: 20px !important;
+        background: rgba(0, 0, 0, 0.04) !important;
+        border-radius: 12px !important;
+        padding: 4px !important;
+    }
+    
+    .vapi-mode-button {
+        flex: 1 !important;
+        padding: 12px 20px !important;
+        border: none !important;
+        border-radius: 8px !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        background: transparent !important;
+        color: #666 !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        min-height: 44px !important;
+    }
+    
+    .vapi-mode-button.active {
+        background: white !important;
+        color: #68ccd1 !important;
+        box-shadow: 0 2px 8px rgba(104, 204, 209, 0.2) !important;
+    }
+    
+    /* Mobile text input container */
+    #vapi-text-input-container {
+        display: flex !important;
+        gap: 12px !important;
+        align-items: center !important;
+    }
+    
+    #vapi-message-input {
+        flex: 1 !important;
+        padding: 16px 20px !important;
+        border: 2px solid rgba(0, 0, 0, 0.08) !important;
+        border-radius: 24px !important;
+        font-size: 16px !important;
+        background: white !important;
+        color: #333 !important;
+        outline: none !important;
+        transition: all 0.2s ease !important;
+        min-height: 52px !important;
+        box-sizing: border-box !important;
+        -webkit-appearance: none !important;
+    }
+    
+    #vapi-message-input:focus {
+        border-color: #68ccd1 !important;
+        box-shadow: 0 0 0 3px rgba(104, 204, 209, 0.15) !important;
+    }
+    
+    #vapi-send-button {
+        width: 52px !important;
+        height: 52px !important;
+        border-radius: 50% !important;
+        border: none !important;
+        background: linear-gradient(135deg, #68ccd1, #5bb5ba) !important;
+        color: white !important;
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+    }
+    
+    #vapi-send-button:hover {
+        transform: scale(1.05) !important;
+        box-shadow: 0 4px 15px rgba(104, 204, 209, 0.3) !important;
+    }
+    
+    #vapi-send-button:disabled {
+        opacity: 0.5 !important;
+        cursor: not-allowed !important;
+        transform: none !important;
+    }
+    
+    /* Mobile voice controls */
+    #vapi-voice-controls {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 16px !important;
+    }
+    
+    #vapi-voice-button {
+        width: 80px !important;
+        height: 80px !important;
+        border-radius: 50% !important;
+        border: none !important;
+        background: linear-gradient(135deg, #68ccd1, #5bb5ba) !important;
+        color: white !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 8px 25px rgba(104, 204, 209, 0.3) !important;
+    }
+    
+    #vapi-voice-button:hover {
+        transform: scale(1.05) !important;
+        box-shadow: 0 12px 35px rgba(104, 204, 209, 0.4) !important;
+    }
+    
+    #vapi-voice-button.active {
+        background: linear-gradient(135deg, #dc3545, #c82333) !important;
+        animation: pulse 1.5s infinite !important;
+    }
+    
+    @keyframes pulse {
+        0%, 100% { box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3); }
+        50% { box-shadow: 0 12px 35px rgba(220, 53, 69, 0.5); }
+    }
+}
+
+/* SMALL MOBILE SPECIFIC (480px and below) */
+@media screen and (max-width: 480px) {
+    #vapi-chat-panel {
+        bottom: 15px !important;
+        right: 15px !important;
+        width: calc(100vw - 30px) !important;
+        height: 75vh !important;
+        max-height: 550px !important;
+    }
+    
+    #vapi-chat-header {
+        padding: 15px 20px !important;
+    }
+    
+    #vapi-chat-title {
+        font-size: 16px !important;
+    }
+    
+    #vapi-text-messages,
+    #vapi-voice-messages {
+        padding: 15px 20px !important;
+    }
+    
+    .vapi-message,
+    .vapi-voice-message {
+        padding: 14px 16px !important;
+        font-size: 15px !important;
+    }
+    
+    #vapi-input-area {
+        padding: 15px 20px 20px 20px !important;
+    }
+    
+    #vapi-message-input {
+        padding: 14px 18px !important;
+        font-size: 16px !important;
+        min-height: 48px !important;
+    }
+    
+    #vapi-send-button {
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 16px !important;
+    }
+    
+    #vapi-voice-button {
+        width: 70px !important;
+        height: 70px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* LANDSCAPE MOBILE OPTIMIZATION */
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    #vapi-chat-panel {
+        height: 85vh !important;
+        max-height: 500px !important;
+    }
+}
+
+/* WIDGET VISIBILITY STATES */
+.vapi-text-mode #vapi-voice-messages,
+.vapi-text-mode #vapi-voice-controls {
+    display: none !important;
+}
+
+.vapi-voice-mode #vapi-text-messages,
+.vapi-voice-mode #vapi-text-input-container {
+    display: none !important;
+}
+
+/* Cold Lava branding mobile optimization */
+#vapi-chat-panel .powered-by {
+    font-size: 11px !important;
+    padding: 8px 0 0 0 !important;
+    margin-top: 12px !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+#vapi-chat-panel .powered-by a {
+    color: rgba(0, 0, 0, 0.5) !important;
+    transition: color 0.2s ease !important;
+}
+
+#vapi-chat-panel .powered-by a:hover {
+    color: #68ccd1 !important;
+}
+</style>
 
 <!-- VAPI Widget JavaScript -->
 <script src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js"></script>

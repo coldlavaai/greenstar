@@ -56,28 +56,448 @@
   }
 }
 
+/* ⚡ ULTRA MOBILE OPTIMIZATION - FRAMER EDITION */
+/* Professional Dynamic Experience for Framer Integration */
+
+/* TABLET AND MOBILE FOUNDATION (up to 768px) */
 @media (max-width: 768px) {
   #framer-vapi-container #vapi-hybrid-widget {
     bottom: 20px !important;
     right: 20px !important;
+    /* Universal hardware acceleration for Framer */
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    z-index: 999999 !important;
+    /* Framer-specific isolation */
+    isolation: isolate !important;
   }
   
   #framer-vapi-container #vapi-chat-panel {
-    width: 90vw !important;
-    height: 75vh !important;
-    right: 5vw !important;
+    width: calc(100vw - 40px) !important;
+    height: 85vh !important;
+    max-height: 550px !important;
+    right: 20px !important;
+    bottom: 90px !important;
+    border-radius: 20px !important;
+    /* Enhanced mobile performance for Framer */
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    -webkit-overflow-scrolling: touch !important;
+    overflow-y: auto !important;
+    /* Framer compatibility layer */
+    position: fixed !important;
+  }
+  
+  #framer-vapi-container #vapi-tooltip {
+    /* Enhanced mobile performance */
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    font-size: 13px !important;
+    padding: 10px 14px !important;
+    bottom: 75px !important;
+  }
+  
+  #framer-vapi-container #vapi-chat-button {
+    width: 70px !important;
+    height: 70px !important;
+    /* Touch-friendly sizing maintained */
+    min-width: 70px !important;
+    min-height: 70px !important;
+    /* Performance optimizations for Framer */
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+  }
+  
+  #framer-vapi-container #vapi-chat-button img {
+    width: 42px !important;
+    height: 42px !important;
+  }
+  
+  #framer-vapi-container #vapi-chat-header {
+    padding: 20px 25px !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+  }
+  
+  #framer-vapi-container #vapi-chat-title {
+    font-size: 18px !important;
+  }
+  
+  #framer-vapi-container #vapi-text-messages,
+  #framer-vapi-container #vapi-voice-messages {
+    padding: 20px 25px !important;
+    /* Fix scrolling performance in Framer */
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    position: relative !important;
+  }
+  
+  #framer-vapi-container #vapi-input-area {
+    padding: 20px 25px !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+  }
+  
+  #framer-vapi-container #vapi-message-input {
+    font-size: 16px !important;
+    padding: 14px 18px !important;
+    border-radius: 20px !important;
+    /* Prevent zoom on iOS in Framer */
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    /* Touch optimization */
+    touch-action: manipulation !important;
+    min-height: 44px !important;
+  }
+  
+  #framer-vapi-container #vapi-send-button {
+    padding: 14px 20px !important;
+    font-size: 14px !important;
+    border-radius: 20px !important;
+    /* Touch-friendly minimum size */
+    min-width: 60px !important;
+    min-height: 44px !important;
+    touch-action: manipulation !important;
+  }
+  
+  #framer-vapi-container #vapi-voice-button {
+    padding: 16px 24px !important;
+    font-size: 14px !important;
+    border-radius: 12px !important;
+    /* Touch optimization */
+    min-height: 44px !important;
+    touch-action: manipulation !important;
+  }
+  
+  #framer-vapi-container .vapi-message,
+  #framer-vapi-container .vapi-voice-message {
+    max-width: 85% !important;
+    font-size: 14px !important;
+    padding: 14px 18px !important;
+    border-radius: 16px !important;
+    /* Performance optimization for Framer */
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+  }
+  
+  #framer-vapi-container .vapi-mode-button {
+    padding: 12px 16px !important;
+    font-size: 13px !important;
+    border-radius: 8px !important;
+    /* Touch-friendly sizing */
+    min-height: 44px !important;
+    touch-action: manipulation !important;
   }
 }
 
+/* SAFARI-SPECIFIC MOBILE OPTIMIZATIONS FOR FRAMER */
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+  #framer-vapi-container #vapi-hybrid-widget {
+    /* Safari-specific hardware acceleration in Framer */
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+  }
+  
+  #framer-vapi-container #vapi-chat-panel {
+    /* Enhanced Safari support in Framer */
+    -webkit-backdrop-filter: blur(30px) saturate(150%) !important;
+    backdrop-filter: blur(30px) saturate(150%) !important;
+    background: var(--vapi-dark) !important;
+    -webkit-overflow-scrolling: touch !important;
+    position: fixed !important;
+  }
+  
+  #framer-vapi-container #vapi-text-messages,
+  #framer-vapi-container #vapi-voice-messages {
+    /* Fix Safari scrolling issues in Framer */
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  #framer-vapi-container #vapi-input-area {
+    /* Safari input optimization in Framer */
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  
+  #framer-vapi-container #vapi-message-input {
+    /* Safari input fix for Framer */
+    -webkit-appearance: none !important;
+    -webkit-border-radius: 20px !important;
+    border-radius: 20px !important;
+  }
+}
+
+/* LANDSCAPE ORIENTATION SUPPORT FOR FRAMER */
+@media (max-width: 768px) and (orientation: landscape) {
+  #framer-vapi-container #vapi-chat-panel {
+    height: 90vh !important;
+    max-height: 400px !important;
+    width: calc(100vw - 40px) !important;
+  }
+  
+  #framer-vapi-container #vapi-text-messages,
+  #framer-vapi-container #vapi-voice-messages {
+    padding: 15px 20px !important;
+    max-height: 200px !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  #framer-vapi-container #vapi-input-area {
+    padding: 15px 20px !important;
+  }
+}
+
+/* SMALL MOBILE SPECIFIC FOR FRAMER (480px and below) */
 @media (max-width: 480px) {
   #framer-vapi-container #vapi-hybrid-widget {
     bottom: 15px !important;
     right: 15px !important;
   }
   
+  #framer-vapi-container #vapi-chat-panel {
+    width: calc(100vw - 30px) !important;
+    height: 80vh !important;
+    max-height: 500px !important;
+    bottom: 75px !important;
+    right: 15px !important;
+    border-radius: 18px !important;
+    /* Enhanced small screen performance for Framer */
+    contain: layout style paint !important;
+  }
+  
   #framer-vapi-container #vapi-chat-button {
-    width: 55px !important;
-    height: 55px !important;
+    width: 60px !important;
+    height: 60px !important;
+    /* Maintain touch-friendly size */
+    min-width: 60px !important;
+    min-height: 60px !important;
+  }
+  
+  #framer-vapi-container #vapi-chat-button img {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  
+  #framer-vapi-container #vapi-tooltip {
+    bottom: 65px !important;
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+    max-width: 150px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  
+  #framer-vapi-container #vapi-text-messages,
+  #framer-vapi-container #vapi-voice-messages {
+    padding: 15px 18px !important;
+    /* Small screen scroll optimization */
+    scrollbar-width: thin !important;
+  }
+  
+  #framer-vapi-container #vapi-input-area {
+    padding: 15px 18px !important;
+  }
+  
+  #framer-vapi-container #vapi-chat-header {
+    padding: 15px 18px !important;
+    /* Flexible header for small screens */
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  
+  #framer-vapi-container #vapi-chat-title {
+    font-size: 16px !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  
+  #framer-vapi-container #vapi-close-button {
+    flex-shrink: 0 !important;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+  }
+  
+  #framer-vapi-container .vapi-message,
+  #framer-vapi-container .vapi-voice-message {
+    max-width: 90% !important;
+    font-size: 13px !important;
+    padding: 12px 15px !important;
+    border-radius: 14px !important;
+    line-height: 1.4 !important;
+  }
+  
+  #framer-vapi-container #vapi-message-input {
+    font-size: 16px !important;
+    padding: 12px 16px !important;
+    border-radius: 18px !important;
+    /* Maintain minimum height for touch */
+    min-height: 44px !important;
+  }
+  
+  #framer-vapi-container #vapi-send-button {
+    padding: 12px 16px !important;
+    font-size: 13px !important;
+    border-radius: 18px !important;
+    min-width: 50px !important;
+    min-height: 44px !important;
+  }
+  
+  #framer-vapi-container #vapi-voice-button {
+    padding: 14px 20px !important;
+    font-size: 13px !important;
+    border-radius: 12px !important;
+    min-height: 44px !important;
+  }
+  
+  #framer-vapi-container .vapi-mode-button {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+    border-radius: 8px !important;
+    min-height: 40px !important;
+  }
+}
+
+/* EXTRA SMALL SCREENS FOR FRAMER (320px and below) */
+@media screen and (max-width: 320px) {
+  #framer-vapi-container #vapi-chat-panel {
+    width: calc(100vw - 20px) !important;
+    right: 10px !important;
+    bottom: 70px !important;
+    border-radius: 16px !important;
+  }
+  
+  #framer-vapi-container #vapi-hybrid-widget {
+    bottom: 12px !important;
+    right: 12px !important;
+  }
+  
+  #framer-vapi-container #vapi-chat-button {
+    width: 56px !important;
+    height: 56px !important;
+  }
+  
+  #framer-vapi-container #vapi-chat-button img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  
+  #framer-vapi-container #vapi-tooltip {
+    bottom: 60px !important;
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    max-width: 120px !important;
+  }
+  
+  #framer-vapi-container #vapi-text-messages,
+  #framer-vapi-container #vapi-voice-messages {
+    padding: 12px 15px !important;
+  }
+  
+  #framer-vapi-container #vapi-input-area {
+    padding: 12px 15px !important;
+  }
+  
+  #framer-vapi-container #vapi-chat-header {
+    padding: 12px 15px !important;
+  }
+  
+  #framer-vapi-container #vapi-chat-title {
+    font-size: 15px !important;
+  }
+  
+  #framer-vapi-container .vapi-message,
+  #framer-vapi-container .vapi-voice-message {
+    font-size: 12px !important;
+    padding: 10px 12px !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* HIGH DPI MOBILE DISPLAYS FOR FRAMER */
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+  #framer-vapi-container #vapi-chat-button img {
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: crisp-edges !important;
+  }
+  
+  #framer-vapi-container .vapi-message,
+  #framer-vapi-container .vapi-voice-message {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+}
+
+/* TOUCH DEVICE OPTIMIZATIONS FOR FRAMER */
+@media (hover: none) and (pointer: coarse) {
+  #framer-vapi-container #vapi-chat-button:hover {
+    /* Override hover effects for touch devices */
+    transform: translateY(-8px) scale(1.05) !important;
+  }
+  
+  #framer-vapi-container #vapi-send-button:hover,
+  #framer-vapi-container #vapi-voice-button:hover,
+  #framer-vapi-container .vapi-mode-button:hover {
+    /* Maintain touch feedback without hover effects */
+    transform: scale(1.02) !important;
+  }
+  
+  #framer-vapi-container #vapi-message-input {
+    /* Enhanced touch input */
+    -webkit-tap-highlight-color: transparent !important;
+    tap-highlight-color: transparent !important;
+  }
+}
+
+/* PERFORMANCE OPTIMIZATIONS FOR FRAMER MOBILE */
+@media (max-width: 768px) {
+  #framer-vapi-container #vapi-hybrid-widget,
+  #framer-vapi-container #vapi-chat-panel,
+  #framer-vapi-container #vapi-text-messages,
+  #framer-vapi-container #vapi-voice-messages,
+  #framer-vapi-container #vapi-input-area {
+    /* GPU acceleration for smooth performance in Framer */
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    will-change: transform !important;
+  }
+  
+  #framer-vapi-container .vapi-message,
+  #framer-vapi-container .vapi-voice-message {
+    /* Optimize message rendering in Framer */
+    contain: content !important;
+  }
+  
+  #framer-vapi-container #vapi-chat-panel.open {
+    /* Smooth opening animation for Framer */
+    animation: framerMobileSlideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+  }
+}
+
+@keyframes framerMobileSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
