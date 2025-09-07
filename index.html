@@ -3365,6 +3365,67 @@ button[class*="vapi-btn"] {
         flex-shrink: 0 !important;
     }
     
+    /* CRITICAL FIX: Voice button visibility - ULTRA HIGH SPECIFICITY */
+    @media screen and (max-width: 1024px) {
+        #vapi-hybrid-widget #vapi-chat-panel #vapi-voice-controls #vapi-voice-button {
+            width: 100px !important;
+            height: 45px !important;
+            min-width: 100px !important;
+            min-height: 45px !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            border: 1px solid rgba(104, 204, 209, 0.2) !important;
+            border-radius: 25px !important;
+            background: linear-gradient(135deg, rgba(104, 204, 209, 0.1), rgba(104, 204, 209, 0.05)) !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            color: var(--vapi-accent-color) !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            cursor: pointer !important;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+            box-shadow: 0 4px 15px rgba(104, 204, 209, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+            position: relative !important;
+        }
+        
+        #vapi-hybrid-widget #vapi-chat-panel #vapi-voice-controls #vapi-voice-button::before {
+            content: '🎙️' !important;
+            font-size: 14px !important;
+            opacity: 0.8 !important;
+            transition: all 0.3s ease !important;
+            display: inline !important;
+        }
+    }
+    
+    /* CRITICAL FIX: Mode buttons compact size - ULTRA HIGH SPECIFICITY */
+    @media screen and (max-width: 1024px) {
+        #vapi-hybrid-widget #vapi-chat-panel #vapi-input-area #vapi-mode-toggle .vapi-mode-button {
+            height: 22px !important;
+            min-height: 22px !important;
+            max-height: 22px !important;
+            padding: 2px 8px !important;
+            font-size: 10px !important;
+            line-height: 18px !important;
+            border-radius: 6px !important;
+            flex: 1 !important;
+            border: none !important;
+            background: transparent !important;
+            color: rgba(255, 255, 255, 0.6) !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        
+        #vapi-hybrid-widget #vapi-chat-panel #vapi-input-area #vapi-mode-toggle .vapi-mode-button.active {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: var(--vapi-primary-color) !important;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+        }
+    }
+    
     #vapi-input-area::before {
         content: '' !important;
         position: absolute !important;
@@ -3394,18 +3455,23 @@ button[class*="vapi-btn"] {
         margin-right: auto !important;
     }
     
-    #vapi-hybrid-widget #vapi-chat-panel .vapi-mode-button {
-        padding: 4px 10px !important;
-        border: none !important;
-        border-radius: 14px !important;
-        font-size: 10px !important;
-        font-weight: 600 !important;
-        background: transparent !important;
-        color: rgba(255, 255, 255, 0.7) !important;
-        cursor: pointer !important;
-        transition: all 0.2s ease !important;
-        height: 22px !important;
-        min-width: 40px !important;
+    /* ULTRA HIGH SPECIFICITY MODE BUTTON FIX */
+    @media screen and (max-width: 1024px) {
+        #vapi-hybrid-widget #vapi-chat-panel #vapi-input-area #vapi-mode-toggle .vapi-mode-button {
+            padding: 4px 10px !important;
+            border: none !important;
+            border-radius: 14px !important;
+            font-size: 10px !important;
+            font-weight: 600 !important;
+            background: transparent !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+            height: 22px !important;
+            max-height: 22px !important;
+            min-height: 22px !important;
+            min-width: 40px !important;
+            line-height: 1 !important;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
         backdrop-filter: blur(8px) !important;
         -webkit-backdrop-filter: blur(8px) !important;
