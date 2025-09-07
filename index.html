@@ -3131,16 +3131,16 @@ button[class*="vapi-btn"] {
         filter: brightness(0) invert(1) !important;
     }
     
-    /* Mobile chat panel - EXACT DESKTOP MATCH */
+    /* Mobile chat panel - OPTIMIZED FOR CONVERSATION */
     #vapi-chat-panel {
         position: fixed !important;
         bottom: 20px !important;
         right: 20px !important;
         width: calc(100vw - 40px) !important;
         max-width: 420px !important;
-        height: 70vh !important;
-        max-height: 600px !important;
-        min-height: 400px !important;
+        height: 75vh !important;
+        max-height: 650px !important;
+        min-height: 500px !important;
         
         /* EXACT DESKTOP STYLING - DARK THEME */
         background: linear-gradient(145deg, rgba(10, 10, 33, 0.25), rgba(10, 10, 33, 0.15)) !important;
@@ -3222,9 +3222,9 @@ button[class*="vapi-btn"] {
         }
     }
     
-    /* Mobile chat header - EXACT DESKTOP MATCH */
+    /* Mobile chat header - COMPACT FOR MORE CONVERSATION SPACE */
     #vapi-chat-header {
-        padding: 25px 30px !important;
+        padding: 18px 25px !important;
         border-bottom: 1px solid rgba(104, 204, 209, 0.15) !important;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), transparent) !important;
         backdrop-filter: blur(20px) !important;
@@ -3272,17 +3272,18 @@ button[class*="vapi-btn"] {
         box-shadow: 0 4px 15px rgba(104, 204, 209, 0.2) !important;
     }
     
-    /* Mobile messages area - EXACT DESKTOP MATCH */
+    /* Mobile messages area - MAXIMIZED FOR CONVERSATION */
     #vapi-text-messages,
     #vapi-voice-messages {
         flex: 1 !important;
-        padding: 25px 30px !important;
+        padding: 15px 20px !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important;
         background: transparent !important;
         position: relative !important;
         scrollbar-width: thin !important;
         scrollbar-color: rgba(104, 204, 209, 0.3) transparent !important;
+        min-height: 200px !important;
     }
     
     #vapi-text-messages::-webkit-scrollbar,
@@ -3348,9 +3349,9 @@ button[class*="vapi-btn"] {
         backdrop-filter: blur(15px) !important;
     }
     
-    /* Mobile input area - EXACT DESKTOP MATCH */
+    /* Mobile input area - COMPACT FOR MORE CONVERSATION SPACE */
     #vapi-input-area {
-        padding: 25px 30px !important;
+        padding: 15px 20px !important;
         background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.1)) !important;
         backdrop-filter: blur(30px) !important;
         -webkit-backdrop-filter: blur(30px) !important;
@@ -3371,34 +3372,41 @@ button[class*="vapi-btn"] {
         opacity: 0.6 !important;
     }
     
-    /* Mobile mode toggle - EXACT DESKTOP MATCH */
+    /* Mobile mode toggle - MINI COMPACT VERSION */
     #vapi-mode-toggle {
         display: flex !important;
-        gap: 6px !important;
-        margin-bottom: 20px !important;
-        background: rgba(104, 204, 209, 0.05) !important;
+        gap: 3px !important;
+        margin-bottom: 12px !important;
+        background: rgba(104, 204, 209, 0.08) !important;
         border: 1px solid rgba(104, 204, 209, 0.15) !important;
-        border-radius: 16px !important;
-        padding: 6px !important;
-        backdrop-filter: blur(20px) !important;
-        -webkit-backdrop-filter: blur(20px) !important;
+        border-radius: 20px !important;
+        padding: 3px !important;
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        width: fit-content !important;
+        align-self: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
     
     .vapi-mode-button {
-        flex: 1 !important;
-        padding: 12px 20px !important;
+        padding: 6px 12px !important;
         border: none !important;
-        border-radius: 12px !important;
-        font-size: 14px !important;
+        border-radius: 16px !important;
+        font-size: 11px !important;
         font-weight: 600 !important;
         background: transparent !important;
         color: rgba(255, 255, 255, 0.7) !important;
         cursor: pointer !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        min-height: 44px !important;
+        transition: all 0.2s ease !important;
+        min-height: 26px !important;
+        min-width: 50px !important;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
-        backdrop-filter: blur(10px) !important;
-        -webkit-backdrop-filter: blur(10px) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        white-space: nowrap !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
     }
     
     .vapi-mode-button.active {
@@ -3501,33 +3509,32 @@ button[class*="vapi-btn"] {
         box-shadow: 0 2px 8px rgba(104, 204, 209, 0.1) !important;
     }
     
-    /* Mobile voice controls - EXACT DESKTOP MATCH */
+    /* Mobile voice controls - COMPACT SIZE */
     #vapi-voice-controls {
         display: flex !important;
-        flex-direction: column !important;
+        justify-content: center !important;
         align-items: center !important;
-        gap: 20px !important;
-        margin-top: 8px !important;
+        margin-top: 5px !important;
     }
     
     #vapi-voice-button {
-        width: 80px !important;
-        height: 80px !important;
+        width: 50px !important;
+        height: 50px !important;
         border-radius: 50% !important;
         border: 2px solid rgba(104, 204, 209, 0.3) !important;
         background: linear-gradient(135deg, var(--vapi-primary-color), rgba(104, 204, 209, 0.8)) !important;
         color: var(--vapi-accent-color) !important;
-        font-size: 14px !important;
+        font-size: 12px !important;
         font-weight: 700 !important;
         cursor: pointer !important;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        backdrop-filter: blur(30px) !important;
-        -webkit-backdrop-filter: blur(30px) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
         box-shadow: 
-            0 12px 35px rgba(104, 204, 209, 0.3),
+            0 6px 20px rgba(104, 204, 209, 0.3),
             inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
     }
