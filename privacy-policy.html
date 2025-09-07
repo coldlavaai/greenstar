@@ -2244,18 +2244,28 @@ body {
 /* Cold Lava branding mobile optimization */
 #vapi-chat-panel .powered-by {
     font-size: 11px !important;
-    padding: 8px 0 0 0 !important;
-    margin-top: 12px !important;
-    border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+    padding: 12px 0 0 0 !important;
+    margin-top: 15px !important;
+    border-top: 1px solid rgba(104, 204, 209, 0.15) !important;
+    text-align: center !important;
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.05)) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
 }
 
 #vapi-chat-panel .powered-by a {
-    color: rgba(0, 0, 0, 0.5) !important;
-    transition: color 0.2s ease !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.3px !important;
+    transition: all 0.3s ease !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
 }
 
 #vapi-chat-panel .powered-by a:hover {
-    color: #68ccd1 !important;
+    color: var(--vapi-primary-color) !important;
+    transform: translateY(-1px) !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* Hide various Vapi support buttons */
@@ -2878,22 +2888,111 @@ button[class*="vapi-btn"] {
         height: 36px !important;
     }
 
+    /* Mobile chat panel - EXACT DESKTOP MATCH */
     #vapi-chat-panel {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
         width: calc(100vw - 40px) !important;
-        height: 80vh !important;
-        max-height: 500px !important;
-        bottom: 80px !important;
-        right: 0px !important;
-        border-radius: 20px !important;
-        /* Enhanced mobile performance */
+        max-width: 420px !important;
+        height: 70vh !important;
+        max-height: 600px !important;
+        min-height: 400px !important;
+        
+        /* EXACT DESKTOP STYLING - DARK THEME */
+        background: linear-gradient(145deg, rgba(10, 10, 33, 0.25), rgba(10, 10, 33, 0.15)) !important;
+        border-radius: 28px !important;
+        border: 1px solid var(--vapi-glass-border) !important;
+        backdrop-filter: blur(50px) saturate(200%) !important;
+        -webkit-backdrop-filter: blur(50px) saturate(200%) !important;
+        box-shadow: 
+            0 50px 100px rgba(0, 0, 0, 0.4),
+            0 25px 50px rgba(0, 0, 0, 0.25),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1),
+            0 0 0 1px rgba(104, 204, 209, 0.15),
+            0 0 80px rgba(104, 204, 209, 0.1) !important;
+        
+        /* Layout and behavior */
+        display: none !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+        z-index: 999998 !important;
+        font-family: inherit !important;
+        
+        /* Performance optimizations */
         -webkit-transform: translateZ(0) !important;
         transform: translateZ(0) !important;
         -webkit-overflow-scrolling: touch !important;
-        overflow-y: auto !important;
+        contain: layout style paint !important;
+    }
+    
+    /* EXACT DESKTOP PANEL EFFECTS */
+    #vapi-chat-panel::before {
+        content: '' !important;
+        position: absolute !important;
+        inset: 0 !important;
+        background: 
+            radial-gradient(circle at 15% 15%, rgba(104, 204, 209, 0.12), transparent 50%),
+            radial-gradient(circle at 85% 85%, rgba(7, 133, 2, 0.08), transparent 50%) !important;
+        opacity: 0.8 !important;
+        pointer-events: none !important;
+    }
+    
+    #vapi-chat-panel::after {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 1px !important;
+        background: linear-gradient(90deg, transparent, rgba(104, 204, 209, 0.5), transparent) !important;
+        opacity: 0.6 !important;
+    }
+    
+    #vapi-chat-panel.open {
+        display: flex !important;
+        animation: slideUpUltraSmooth 0.8s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    }
+    
+    /* EXACT DESKTOP ANIMATION */
+    @keyframes slideUpUltraSmooth {
+        0% { 
+            opacity: 0; 
+            transform: translateY(60px) scale(0.88) rotateX(10deg);
+            backdrop-filter: blur(0px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        50% {
+            opacity: 0.8;
+            transform: translateY(-5px) scale(1.02) rotateX(-2deg);
+        }
+        100% { 
+            opacity: 1; 
+            transform: translateY(0) scale(1) rotateX(0deg);
+            backdrop-filter: blur(50px);
+            box-shadow: 
+                0 50px 100px rgba(0, 0, 0, 0.4),
+                0 25px 50px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 0 0 1px rgba(104, 204, 209, 0.15),
+                0 0 80px rgba(104, 204, 209, 0.1);
+        }
     }
 
+    /* Mobile chat header - EXACT DESKTOP MATCH */
     #vapi-chat-header {
-        padding: 20px 25px !important;
+        padding: 25px 30px !important;
+        background: linear-gradient(135deg, rgba(104, 204, 209, 0.95), rgba(7, 133, 2, 0.85)) !important;
+        color: var(--vapi-accent-color) !important;
+        border-bottom: 1px solid rgba(104, 204, 209, 0.15) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+        position: relative !important;
+        z-index: 10 !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
         -webkit-transform: translateZ(0) !important;
         transform: translateZ(0) !important;
     }
@@ -2902,19 +3001,299 @@ button[class*="vapi-btn"] {
         font-size: 18px !important;
     }
 
-    #vapi-text-messages, #vapi-voice-messages {
-        padding: 20px 25px !important;
-        /* Fix scrolling performance */
+    /* Mobile messages area - EXACT DESKTOP MATCH */
+    #vapi-text-messages,
+    #vapi-voice-messages {
+        flex: 1 !important;
+        padding: 25px 30px !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        background: transparent !important;
+        position: relative !important;
+        scrollbar-width: thin !important;
+        scrollbar-color: rgba(104, 204, 209, 0.3) transparent !important;
         -webkit-transform: translateZ(0) !important;
         transform: translateZ(0) !important;
+    }
+    
+    #vapi-text-messages::-webkit-scrollbar,
+    #vapi-voice-messages::-webkit-scrollbar {
+        width: 6px !important;
+    }
+    
+    #vapi-text-messages::-webkit-scrollbar-track,
+    #vapi-voice-messages::-webkit-scrollbar-track {
+        background: rgba(104, 204, 209, 0.05) !important;
+        border-radius: 3px !important;
+    }
+    
+    #vapi-text-messages::-webkit-scrollbar-thumb,
+    #vapi-voice-messages::-webkit-scrollbar-thumb {
+        background: rgba(104, 204, 209, 0.3) !important;
+        border-radius: 3px !important;
+    }
+    
+    .vapi-message,
+    .vapi-voice-message {
+        margin: 20px 0 !important;
+        padding: 16px 20px !important;
+        border-radius: 20px !important;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        max-width: 85% !important;
+        word-wrap: break-word !important;
         position: relative !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .vapi-message-user,
+    .vapi-voice-message-user {
+        background: linear-gradient(135deg, var(--vapi-primary-color), rgba(104, 204, 209, 0.8)) !important;
+        color: var(--vapi-accent-color) !important;
+        margin-left: auto !important;
+        border-bottom-right-radius: 8px !important;
+        border: 1px solid rgba(104, 204, 209, 0.3) !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+    }
+    
+    .vapi-message-assistant,
+    .vapi-voice-message-assistant {
+        background: rgba(255, 255, 255, 0.12) !important;
+        color: var(--vapi-accent-color) !important;
+        border-left: 4px solid var(--vapi-primary-color) !important;
+        border-bottom-left-radius: 8px !important;
+        border: 1px solid rgba(104, 204, 209, 0.15) !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .vapi-message-system,
+    .vapi-voice-message-system {
+        background: rgba(104, 204, 209, 0.08) !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        text-align: center !important;
+        font-size: 13px !important;
+        backdrop-filter: blur(15px) !important;
     }
 
+    /* Mobile input area - EXACT DESKTOP MATCH */
     #vapi-input-area {
-        padding: 20px 25px !important;
+        padding: 25px 30px !important;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.1)) !important;
+        backdrop-filter: blur(30px) !important;
+        -webkit-backdrop-filter: blur(30px) !important;
+        border-top: 1px solid rgba(104, 204, 209, 0.15) !important;
+        position: relative !important;
+        z-index: 10 !important;
+        flex-shrink: 0 !important;
         -webkit-transform: translateZ(0) !important;
         transform: translateZ(0) !important;
     }
+    
+    #vapi-input-area::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 1px !important;
+        background: linear-gradient(90deg, transparent, rgba(104, 204, 209, 0.4), transparent) !important;
+        opacity: 0.6 !important;
+    }
+    
+    /* Mobile mode toggle - EXACT DESKTOP MATCH */
+    #vapi-mode-toggle {
+        display: flex !important;
+        gap: 6px !important;
+        margin-bottom: 20px !important;
+        background: rgba(104, 204, 209, 0.05) !important;
+        border: 1px solid rgba(104, 204, 209, 0.15) !important;
+        border-radius: 16px !important;
+        padding: 6px !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+    }
+    
+    .vapi-mode-button {
+        flex: 1 !important;
+        padding: 12px 20px !important;
+        border: none !important;
+        border-radius: 12px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        cursor: pointer !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        background: transparent !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+        -webkit-tap-highlight-color: transparent !important;
+    }
+    
+    .vapi-mode-button.active {
+        background: linear-gradient(135deg, var(--vapi-primary-color), rgba(104, 204, 209, 0.8)) !important;
+        color: var(--vapi-accent-color) !important;
+        box-shadow: 
+            0 4px 15px rgba(104, 204, 209, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+        transform: translateY(-1px) !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+    }
+    
+    .vapi-mode-button:hover:not(.active) {
+        background: rgba(104, 204, 209, 0.08) !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        transform: translateY(-1px) !important;
+    }
+    
+    /* Mobile text input container - EXACT DESKTOP MATCH */
+    #vapi-text-input-container {
+        display: flex !important;
+        gap: 12px !important;
+        align-items: center !important;
+        margin-top: 8px !important;
+    }
+    
+    #vapi-message-input {
+        flex: 1 !important;
+        padding: 16px 20px !important;
+        border: 2px solid rgba(104, 204, 209, 0.2) !important;
+        border-radius: 25px !important;
+        font-size: 15px !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        color: var(--vapi-accent-color) !important;
+        outline: none !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        min-height: 50px !important;
+        box-sizing: border-box !important;
+        -webkit-appearance: none !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.3px !important;
+    }
+    
+    #vapi-message-input::placeholder {
+        color: rgba(255, 255, 255, 0.5) !important;
+        font-weight: 400 !important;
+    }
+    
+    #vapi-message-input:focus {
+        border-color: var(--vapi-primary-color) !important;
+        background: rgba(255, 255, 255, 0.12) !important;
+        box-shadow: 
+            0 0 0 3px rgba(104, 204, 209, 0.15),
+            0 8px 32px rgba(104, 204, 209, 0.2) !important;
+        transform: translateY(-1px) !important;
+    }
+    
+    #vapi-send-button {
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 50% !important;
+        border: 1px solid rgba(104, 204, 209, 0.3) !important;
+        background: linear-gradient(135deg, var(--vapi-primary-color), rgba(104, 204, 209, 0.8)) !important;
+        color: var(--vapi-accent-color) !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        cursor: pointer !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        box-shadow: 
+            0 4px 15px rgba(104, 204, 209, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    #vapi-send-button:hover {
+        transform: translateY(-2px) scale(1.03) !important;
+        box-shadow: 
+            0 8px 25px rgba(104, 204, 209, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+        border-color: rgba(104, 204, 209, 0.5) !important;
+    }
+    
+    #vapi-send-button:active {
+        transform: translateY(0) scale(0.98) !important;
+        transition: all 0.1s ease !important;
+    }
+    
+    #vapi-send-button:disabled {
+        opacity: 0.4 !important;
+        cursor: not-allowed !important;
+        transform: none !important;
+        box-shadow: 0 2px 8px rgba(104, 204, 209, 0.1) !important;
+    }
+    
+    /* Mobile voice controls - EXACT DESKTOP MATCH */
+    #vapi-voice-controls {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+        margin-top: 8px !important;
+    }
+    
+    #vapi-voice-button {
+        width: 80px !important;
+        height: 80px !important;
+        border-radius: 50% !important;
+        border: 2px solid rgba(104, 204, 209, 0.3) !important;
+        background: linear-gradient(135deg, var(--vapi-primary-color), rgba(104, 204, 209, 0.8)) !important;
+        color: var(--vapi-accent-color) !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        cursor: pointer !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        backdrop-filter: blur(30px) !important;
+        -webkit-backdrop-filter: blur(30px) !important;
+        box-shadow: 
+            0 12px 35px rgba(104, 204, 209, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+    }
+    
+    #vapi-voice-button:hover {
+        transform: translateY(-3px) scale(1.05) !important;
+        box-shadow: 
+            0 20px 50px rgba(104, 204, 209, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+        border-color: rgba(104, 204, 209, 0.5) !important;
+    }
+    
+    #vapi-voice-button.active {
+        background: linear-gradient(135deg, #dc3545, #c82333) !important;
+        border-color: rgba(220, 53, 69, 0.5) !important;
+        animation: voicePulse 1.5s infinite !important;
+        box-shadow: 
+            0 15px 40px rgba(220, 53, 69, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    @keyframes voicePulse {
+        0%, 100% { 
+            box-shadow: 
+                0 15px 40px rgba(220, 53, 69, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transform: scale(1);
+        }
+        50% { 
+            box-shadow: 
+                0 20px 50px rgba(220, 53, 69, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transform: scale(1.02);
+        }
+    }
+
+/* END OF MOBILE EXACT DESKTOP MATCH STYLES */
 
     #vapi-message-input {
         font-size: 16px !important;
