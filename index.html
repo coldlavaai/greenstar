@@ -3222,9 +3222,11 @@ button[class*="vapi-btn"] {
         }
     }
     
-    /* Mobile chat header - COMPACT FOR MORE CONVERSATION SPACE */
-    #vapi-chat-header {
-        padding: 18px 25px !important;
+    /* Mobile chat header - FORCE COMPACT SIZE */
+    #vapi-hybrid-widget #vapi-chat-panel #vapi-chat-header {
+        padding: 12px 20px !important;
+        min-height: 50px !important;
+        max-height: 50px !important;
         border-bottom: 1px solid rgba(104, 204, 209, 0.15) !important;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), transparent) !important;
         backdrop-filter: blur(20px) !important;
@@ -3349,9 +3351,11 @@ button[class*="vapi-btn"] {
         backdrop-filter: blur(15px) !important;
     }
     
-    /* Mobile input area - COMPACT FOR MORE CONVERSATION SPACE */
-    #vapi-input-area {
-        padding: 15px 20px !important;
+    /* Mobile input area - FORCE COMPACT SIZE */
+    #vapi-hybrid-widget #vapi-chat-panel #vapi-input-area {
+        padding: 10px 15px !important;
+        min-height: 60px !important;
+        max-height: 90px !important;
         background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.1)) !important;
         backdrop-filter: blur(30px) !important;
         -webkit-backdrop-filter: blur(30px) !important;
@@ -3372,11 +3376,12 @@ button[class*="vapi-btn"] {
         opacity: 0.6 !important;
     }
     
-    /* Mobile mode toggle - MINI COMPACT VERSION */
-    #vapi-mode-toggle {
+    /* Mobile mode toggle - FORCE MINI SIZE */
+    #vapi-hybrid-widget #vapi-chat-panel #vapi-input-area #vapi-mode-toggle {
         display: flex !important;
-        gap: 3px !important;
-        margin-bottom: 12px !important;
+        gap: 2px !important;
+        margin-bottom: 8px !important;
+        height: 28px !important;
         background: rgba(104, 204, 209, 0.08) !important;
         border: 1px solid rgba(104, 204, 209, 0.15) !important;
         border-radius: 20px !important;
@@ -3389,18 +3394,18 @@ button[class*="vapi-btn"] {
         margin-right: auto !important;
     }
     
-    .vapi-mode-button {
-        padding: 6px 12px !important;
+    #vapi-hybrid-widget #vapi-chat-panel .vapi-mode-button {
+        padding: 4px 10px !important;
         border: none !important;
-        border-radius: 16px !important;
-        font-size: 11px !important;
+        border-radius: 14px !important;
+        font-size: 10px !important;
         font-weight: 600 !important;
         background: transparent !important;
         color: rgba(255, 255, 255, 0.7) !important;
         cursor: pointer !important;
         transition: all 0.2s ease !important;
-        min-height: 26px !important;
-        min-width: 50px !important;
+        height: 22px !important;
+        min-width: 40px !important;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
         backdrop-filter: blur(8px) !important;
         -webkit-backdrop-filter: blur(8px) !important;
